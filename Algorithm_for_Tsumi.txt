@@ -1,0 +1,8 @@
+ALGORITHM FOR TSUMI SOCIAL DELIVERY CENTER
+
+1.Login/Singup
+2.select category of items you want us to buy for you
+3.Choose the specific items
+4.add your info location and phone number(automatic calculates the price and give you the total money you need to pay)/YOU CAN PAY ON DELIVERY
+5.make payment
+6.DOne

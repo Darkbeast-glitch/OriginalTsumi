@@ -1,0 +1,493 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+
+    
+<style>
+
+    .button{
+        /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+        font-size: small;
+        font-weight: 600;
+        border: 1px  #fff;
+        border-radius: 8px;
+        box-shadow: 5px 3px #888888;
+        color: #000;
+
+    }
+    /* CSS */
+.button-62 {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+    /* .button:hover{
+        background-color: rgb(235, 18, 18);
+        color: #ffffff;
+        font-size: 1rem;
+        box-shadow: 3px 3px #888888;
+        border-radius: 5px;
+
+
+    } */
+</style>
+
+
+    <!-- ################# Header Starts Here#######################--->
+ 
+       
+       
+ <!-- ################# Slider Starts Here#######################--->
+  <div class="slider">
+     <!-- Set up your HTML -->
+     <div class="owl-carousel ">
+         <div class="slider-img">
+             <div class="item">
+                 <div class="slider-img"><img src="https://media.istockphoto.com/photos/oranges-picture-id1077585330?b=1&k=20&m=1077585330&s=170667a&w=0&h=VusdXHPD8UbYwq_wLW4Jm1a9TnfudhFYSMLucCDWSg4=" alt=""></div>
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                             <div class="slider-captions">
+                                 <h1 class="slider-title">TSU MI(SEND ME)</h1>
+                                 <p class="slider-text hidden-xs">Do you want to go to the market to buy something but you are feeling lazy or tired?.</p>
+                                 <a href="#" class="btn btn-info hidden-xs">Tsu Mi</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="item">
+             <div class="slider-img"><img src="https://media.istockphoto.com/photos/african-rider-man-delivering-meal-to-customers-home-while-wearing-picture-id1306677058?b=1&k=20&m=1306677058&s=170667a&w=0&h=eC6_6qPiP04MAVJCvUCvWdQEUGhGUMP0T8r2BLt_8gw=" alt=""></div>
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                         <div class="slider-captions">
+                             <h1 class="slider-title">When do you want to get those New Shoes?</h1>
+                             <p class="slider-text hidden-xs"> <strong>TSU MI </strong> is here ,let us get your shoes from your favourite shoe dealer for you and get it in less that  30min.</p>
+                             <a href="#" class="btn btn-info hidden-xs">Send Me Now!</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="item">
+             <div class="slider-img"> <img src="https://media.istockphoto.com/photos/african-food-delivery-man-with-bicycle-and-paper-bag-wearing-surgical-picture-id1299826346?b=1&k=20&m=1299826346&s=170667a&w=0&h=XGu6llYenoa_Zru-9ocEtteRIQZbYALEi2PGriSY-kI=" alt=""></div>
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                         <div class="slider-captions">
+                             <h1 class="slider-title">We deliver to your door steps in <strong>30 Mins</strong></h1>
+                             <p class="slider-text hidden-xs">You order doesnt take more than 30 min. because we work with a large number of delivery service across the nation, therefore your item arrives on time</p>
+                             <a href="#" class="btn btn-info hidden-xs">Send Me Now!</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+<!-- ################# Facilities Avalable #######################--->
+   
+<section id="facility" class="facility">
+ <div class="container">
+     <div class="row session-title">
+         <h2><i class="fa-solid fa-chalkboard-user"></i>  Procedures</h2>
+         <!-- HTML !-->
+       <div class="conatiner" style="padding-left: 80px;">
+      <button class="button-62" role="button"><a href="{% url 'choose' %}" style="color: white;">SendMe</a></button>
+       </div>
+
+
+     </div>
+     <div class="row fac-ro">
+         <div class="col-md-4">
+             <div class="fac-col">
+                 <b><i class="fas fa-user"></i> Create an account</b>
+                 <p>Create an account to be able to track your daily <strong>Send Me</strong>, you can be able to manage your order, cancel your order when you sign up.</p>
+             </div>
+         </div>
+         <div class="col-md-4">
+             <div class="fac-col">
+                 <b><i class="fas fa-list"></i> Select a category</b>
+                 <p>For instance you want us to buy you something in the market, you select <strong>"To The Market"</strong> or you want us to buy you food, you select <strong>"To the Restaurant/Joint"</strong>.</p>
+             </div>
+         </div>
+         <div class="col-md-4">
+             <div class="fac-col">
+                 <b><i class="fas fa-info"></i>Add Your list</b>
+                 <p>Incase you choose <strong>"To the Market"</strong> you would have to manually enterr what you want us to buy and the quantity</p>same applies to categories.
+             </div>
+         </div>
+          <div class="col-md-4">
+             <div class="fac-col">
+                 <b><i class="fa-solid fa-circle-info"></i>Add your info</b>
+                 <p>This is where you add you informations like Address, nearest possible area, Phone number and the rest.</p>
+             </div>
+         </div>
+          <div class="col-md-4">
+             <div class="fac-col">
+                 <b><i class="fa-solid fa-circle-check"></i>Confirm Your Order</b>
+                 <p>Here, you confrirm your order and then proceed to payment.</p>
+             </div>
+         </div>
+          <div class="col-md-4">
+             <div class="fac-col">
+                 <b><i class="fa-solid fa-comment-dollar"></i>Make Payment</b>
+                 <p>Our payment system is very secured, you can pay with any credit card, you can also may with normal momo and hey, we do pay as you go .</p>
+             </div>
+         </div>
+     </div>
+ </div>
+</section>
+    
+  
+     <!--  ************************* Aboutus Starts Here ************************** -->
+     
+        <section id="about_us" class="row no-margin home-about">
+         <div class="col-sm-6 no-padding about-img">
+             <img src="{% static 'assets/images/twumii.jpg'%}" style="width: 100%; height: 26rem;" alt="About Home">
+         </div>
+         <div class="col-sm-6 no-padding adout-det">
+             <div class="layy">
+                 <b>About Business Space</b>
+                 <p>Under the Management of <strong>Merch Perch Business</strong> which is headed and managed by <strong>Boakye Julius Nana Acheampong </strong> , planned to establish this problem solving business. <strong>How did we come with this idea?</strong> So, we found out that, many people really feel lazy and sometimes too tired to go to the market, and in the scorching sun, they have to be in a very long queue just to  purchase food ingredients,also we also noticed some people are too busy to go and buy things for them self even though they are highly in need of them. so when it happens this way, what is the person going to do. we thought of this and said we can do something to solve these problems.
+                this is why we came up with <strong>TWU MI </strong> this word transelated to English means <strong>SEND ME </strong> which simply means, let us do your errands for you, so this is one of the easies thing to do , just log on and let us run your errands for you</p>
+                 
+                 <p>Our spaces are designed to promote productivity whether you're a team of one or 10, and month-to-month flexibility means your space is just as lively as you are. If you're looking for a well-connected and affordable office space, choose Business Space by Lifeart.</p>
+                
+             </div>
+         </div>
+     </section>
+         
+     
+      <!-- ######## Aboutus End ####### -->    
+      
+                       
+<!-- ################# Packages Starts Here#######################--->
+ <section id="pricing" class="packages">
+     <div class="container">
+         <div class="row session-title">
+         <h2>Tsu Mi locations</h2>
+         <p> Tsu Mi currently dont run in some various part of Ghana, the follwoing whre where we run.</p>
+     </div>
+        
+        <br><br><br>
+         <div class="row">
+            
+             <div class="col-md-4">
+                 <div class="product-box">
+                     <div class="product-header">
+                         <h4>
+                             ACCRA
+                         </h4>
+                         <p>
+                             Everywhere in Accra we will go
+                         </p>
+                     </div>
+                     <div class="product-price">
+                      SEND ME <i class="fa-solid fa-moped"></i>
+                     </div>
+                     <div class="product-features">
+                         <ul>
+                             <li>
+                                 Delivery fee as low as  <strong>₡10.00</strong>
+                             </li>
+                             <li>
+                                 from Accra to outside of accra pay as low as  <strong>₡25.00</strong>
+                             </li>
+                             <li>
+                                Receive a discount of  <strong>50%</strong> if you continue to use <strong>Tsu Mi</strong> in Accra
+                             </li>
+                         </ul>
+                         <ul class="smal">
+                             <li>
+                               <i class="fas fa-check"></i> Dzorwulu
+                               East Legon
+                               Kaneshie
+                               Kokomlemle
+                               Tesano
+                               West Legon/Westlands
+                               Abelemkpe
+                               Cantonments
+                               Labone
+                               Burma Camp
+                               Teshie
+                               Tse-Addo
+                             </li>
+                             <li>
+                               <i class="fas fa-check"></i>  Chorkor
+                               Mamprobi
+                               Korle Bu
+                               Korle Gonno
+                               Lartebiokorshie
+                               Mataheko
+                               Dansoman
+                               Adenta
+                             </li>
+                             <li>
+                               <i class="fas fa-check"></i> North Ridge
+                               Adabraka
+                               Asylum Down
+                               McCarthy Hill
+                               Airport Hills
+                               Airport Residential Area
+                               Roman Ridge
+                               Kanda
+                             </li>
+                             <li>
+                                <i class="fas fa-check"></i> Victoriaborg
+                                East Ridge
+                                West Ridge
+                             </li>
+                         </ul>
+                     </div>
+                     <div class="product-order">
+                         <a class="btn btn-info" href="{% url 'choose' %}">
+                             <i class="fas fa-shopping-cart icon-left"></i>Order Now
+                         </a>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="col-md-4">
+                 <div class="product-box ultimate">
+                     <div class="product-popular">
+                         TEMA
+                     </div>
+                     <div class="product-header">
+                         <h4>
+                             Tsu Mi
+                         </h4>
+                         <p>
+                            All comunities in Tema, Tsu Mi is there
+                         </p>
+                     </div>
+                     <div class="product-price">
+                         SEND ME
+                     </div>
+                     <div class="product-features">
+                         <ul>
+                             <li>
+                                Delivery fee as low as  <strong>₡15.00</strong>
+                            </li>
+                            <li>
+                                from Tema to outside of Tema pay as low as  <strong>₡30.00</strong>
+                            </li>
+                            <li>
+                               Receive a discount of  <strong>50%</strong> if you continue to use <strong>Tsu Mi</strong> in Tema as your errand platform
+                            </li>
+                         </ul>
+                         <ul class="smal">
+                             <li>
+                              <i class="fas fa-check"></i>   All part of Tema , Tswu mi is present to get your products devilvered
+                             </li>
+                             <li>
+                               <i class="fas fa-check"></i> Receive your item in less than 30min
+                             </li>
+                             <li>
+                               <i class="fas fa-check"></i> You dont prefer sendin <strong>MOMO</strong> we accept <strong>Cash on delivery</strong>
+                             </li>
+                             <!-- <li>
+                                 <i class="fas fa-check"></i> 
+                             </li> -->
+                         </ul>
+                     </div>
+                     <div class="product-order">
+                         <a class="btn btn-info" href="{% url 'choose' %}">
+                             <i class="fas fa-shopping-cart icon-left"></i>Order Now
+                         </a>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="col-md-4">
+                 <div class="product-box">
+                     <div class="product-header">
+                         <h4>
+                             KUMASI
+                         </h4>
+                         <p>
+                             Every part of Kumasi , Tsu Mi is there!.
+                         </p>
+                     </div>
+                     <div class="product-price">
+                        SEND ME
+                     </div>
+                     <div class="product-features">
+                         <ul>
+                            <li>
+                                Delivery fee as low as  <strong>₡25-₡35</strong>
+                            </li>
+                            <li>
+                                from Kumasi to outside of Kumasi pay as low as  <strong>₡30.00</strong>
+                            </li>
+                            <li>
+                               Receive a discount of  <strong>50%</strong> if you continue to use <strong>Tsu Mi</strong> in Kumasi as your errand platform
+                            </li>
+                         </ul>
+                         <ul class="smal">
+                             <li>
+                                <i class="fas fa-check"></i> All part of Kumasi, you are eligible to use <strong>Tsu Mi</strong>
+                             </li>
+                             <li>
+                                <i class="fas fa-check"></i> Bantama,Suame,Manhyia
+                             </li>
+                             <li>
+                                <i class="fas fa-check"></i>Asawase,Oforikrom,Asokwa
+                             </li>
+                             <li>
+                                <i class="fas fa-check"></i> Kwadaso,Nhyiaeso,Denase
+                             </li>
+                         </ul>
+                     </div>
+                     <div class="product-order">
+                         <a class="btn btn-info" href="{% url 'choose' %}">
+                             <i class="fas fa-shopping-cart icon-left"></i>Order Now
+                         </a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         
+        
+     </div>
+ </section>
+  
+   <!--  ************************* Gallery Starts Here ************************** -->
+     <div id="gallery" class="gallery">    
+        <div class="container">
+           <div class="row">
+             
+
+     <div class="gallery-filter d-none d-sm-block">
+         <button class="btn btn-default filter-button" data-filter="all">All</button>
+         <button class="btn btn-default filter-button" data-filter="hdpe">Market</button>
+         <button class="btn btn-default filter-button" data-filter="sprinkle">Boutique</button>
+         <button class="btn btn-default filter-button" data-filter="spray">Delivery</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Sneakers</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Church shoes</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Informations</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Package delivery</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">supermarket</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Makola Market</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Kantamanto </button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Kaneshie </button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">Kejetia</button>
+         <button class="btn btn-default filter-button" data-filter="irrigation">food joints</button>
+     </div>
+     <br/>
+
+
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
+             <img src="https://images.unsplash.com/photo-1558907530-83566904e778?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YWZyaWNhbiUyMG1hcmtldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="img-responsive">
+         </div>
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter sprinkle">
+             <img src="https://media.istockphoto.com/photos/jamaa-el-fna-market-picture-id1147478209?b=1&k=20&m=1147478209&s=170667a&w=0&h=pC2UZF8wULl5yrV406rgllNnuaWhrnvLzz3v37hMp9M=
+             " class="img-responsive">
+         </div>
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
+             <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGFmcmljYW4lMjBtYXJrZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="img-responsive">
+         </div>
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
+             <img src="https://media.istockphoto.com/photos/colorful-shoes-for-sale-photo-as-background-picture-id1253435846?b=1&k=20&m=1253435846&s=170667a&w=0&h=JheNTJcSAPhdiGLxYXB59ft0yC2pYDcPqKINuYLsMGM=" class="img-responsive">
+         </div>
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
+             <img src="https://media.istockphoto.com/photos/barbecue-chicken-jollof-rice-picture-id1265268896?b=1&k=20&m=1265268896&s=170667a&w=0&h=BTuiT92MiG6mRSQFFzsmYGBISxbtHcSmxDFPBS_b7OI=" class="img-responsive">
+         </div>
+
+       
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
+             <img src="https://media.istockphoto.com/photos/woman-selling-beans-at-the-central-market-in-ghana-picture-id491890253?b=1&k=20&m=491890253&s=170667a&w=0&h=isC7s4GEP0c15Tq7l0k7vZS1ry2UCStf2NFjcfyz7-c=" class="img-responsive">
+         </div>
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
+             <img src="https://media.istockphoto.com/photos/jollof-rice-with-chicken-and-plantains-picture-id688602226?b=1&k=20&m=688602226&s=170667a&w=0&h=nOapWhFN8nc1f-TMZT2mnJGAjPWylR8WuyDNK-2Y79o=" class="img-responsive">
+         </div>
+
+         <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
+             <img src="https://media.istockphoto.com/photos/raw-african-organic-shea-butter-picture-id183857421?b=1&k=20&m=183857421&s=170667a&w=0&h=CEOxPLeQ0dBHw9OWeNVikE9hxe1P7AygnN6RHZWcNCs=" class="img-responsive">
+         </div>
+
+         
+     </div>
+ </div>
+    
+    
+    </div>
+     <!-- ######## Gallery End ####### -->                                 
+                                   
+  <!--  ************************* Contact Us Starts Here ************************** -->
+ 
+ <section id="contact" class="contact-us-single">
+     <div class="row no-margin">
+         <!-- <div class="col-sm-6 no-padding">
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Teshie%20Camp%202&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:;text-align:right;height:500px;width:1200px;}</style><a href="https://www.embedgooglemap.net">custom google map embed</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style></div></div>
+         </div> -->
+         <div  class="col-sm-12 cop-ck">
+             <h2 >Contact Form</h2>
+                 <div class="row cf-ro">
+                     <div  class="col-sm-3"><label>Enter Name :</label></div>
+                     <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
+                 </div>
+                 <div  class="row cf-ro">
+                     <div  class="col-sm-3"><label>Email Address :</label></div>
+                     <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
+                 </div>
+                  <div  class="row cf-ro">
+                     <div  class="col-sm-3"><label>Mobile Number:</label></div>
+                     <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
+                 </div>
+                  <div  class="row cf-ro">
+                     <div  class="col-sm-3"><label>Enter  Message:</label></div>
+                     <div class="col-sm-8">
+                       <textarea rows="5" placeholder="Enter Your Message" class="form-control input-sm"></textarea>
+                     </div>
+                 </div>
+                  <div  class="row cf-ro">
+                     <div  class="col-sm-3"><label></label></div>
+                     <div class="col-sm-8">
+                      <button class="btn btn-success btn-sm">Send Message</button>
+                     </div>
+             </div>
+         </div>
+     </div>
+ </section>                                   
+    <!-- ################# Footer Starts Here#######################--->
+
+
+
+{%endblock content%}

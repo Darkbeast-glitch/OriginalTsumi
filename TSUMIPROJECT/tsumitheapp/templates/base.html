@@ -1,0 +1,181 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Twu Mi (Send Me) | Stay Home, Stay Safe, We Deliver</title>
+
+
+
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.jpg'%}">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css'%}">
+    <link rel="shortcut icon" href="{% static 'assets/images/twumii.jpg'%}" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/fontawsom-all.min.css'%}"> -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/slider/css/owl.theme.default.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css'%}" />
+
+
+
+
+    <!-- Font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="https://kit.fontawesome.com/d571da6210.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+    <header id="menu-jk">
+ 
+        <div id="nav-head" class="header-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 no-padding col-sm-12 nav-img">
+                       <a href="{% url 'home'%}">
+                        <img class="lo" src="{% static 'assets/images/JULIUSLOG-modified.png'%}" style="width:5rem" alt="">
+                        <img class="lob hid" src="{% static 'assets/images/JULIUSLOG.png' %}" style="width: 5rem;" alt="">
+                       </a>
+                       <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                    </div>
+                    <div id="menu" class="col-lg-9 col-md-9 d-none d-md-block nav-item">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#facility">Procedures</a></li>
+                            <li><a href="#about_us">About Us</a></li>
+                            <li><a href="#pricing">Areas</a></li>  
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+
+                            {% if request.user.is_authenticated%}
+                                <a href="{% url 'logout' %}" style="display: flex; margin-top: 20px;" class="button btn btn-outline-primary">Welcome {{request.user}} <br> Logout</a>
+                            {% else%}
+                                <a href="{% url 'login' %}" style="display: flex; margin-top: 20px;" class="button btn btn-outline-primary">Login/SignUp</a>
+                            {% endif %}
+                        </ul>
+                        
+                    </div>
+                   
+                </div>
+   
+            </div>
+        </div>
+    </header>
+  {% block content%}
+
+  {% endblock content%}
+
+
+
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 about">
+                
+                <h2>About Us</h2>
+                <p><strong>Tsu Mi</strong> transelated to English means <strong>SEND ME</strong> this is a product of <strong> MERCH PERCH BUSINESS</strong>
+                and our purpose is to run errands for you,Are you feeling too lazy to go to the market all by your self, or are you busy with other stuffs but you still need to get some food ingredients, 
+            do you need someone to buy something for you, again are you too tired to go out and buy what you need to buy? do you need something urgently but feeling soo lazy to go out to get that thing , meanwhile you need to get it before tomorrow?, Then this is the reason why we are here</p>
+                
+                <div class="foot-address">
+                    <div class="icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="addet">
+                        BlueDart
+                        Marthandam (K.K District)
+                        Tamil Nadu, IND 
+                    </div>
+                </div>
+                <div class="foot-address">
+                    <div class="icon">
+                        <i class="far fa-envelope-open"></i>
+                    </div>
+                    <div class="addet">
+                        info@smarteyeapps.com <br>
+                        sales@smarteyeapps.com
+                    </div>
+                </div>
+                <div class="foot-address">
+                    <div class="icon">
+                         <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="addet">
+                        +23 323 43434 <br>
+                        +1 3232 434 55
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 fotblog">
+                <h2>From latest Blog</h2>
+                <div class="blohjb">
+                    <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                    <span>22-1-2019</span>
+                </div>
+                <div class="blohjb">
+                    <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                    <span>22-1-2019</span>
+                </div>
+                <div class="blohjb">
+                    <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                    <span>22-1-2019</span>
+                </div>
+            </div>
+            <div class="col-md-3 glink">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="about_us.html"><i class="fas fa-angle-double-right"></i>About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-angle-double-right"></i>Services</a></li>
+                    <li><a href="blog.html"><i class="fas fa-angle-double-right"></i>Blog</a></li>
+                    <li><a href="pricing.html"><i class="fas fa-angle-double-right"></i>Gallery</a></li>
+                    <li><a href="contact_us.html"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 tags">
+                <h2>Easy Tags</h2>
+                <ul>
+                    <li>Finance</li>
+                    <li>Web Design</li>
+                    <li>Internet Pro</li>
+                    <li>Node Js</li>
+                    <li>Java Swing</li>
+                    <li>Angular Js</li>
+                    <li>Vue Js</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copy">
+            <div class="container">
+                <a href="https://www.smarteyeapps.com/">2015 &copy; All Rights Reserved | Designed and Developed by Smarteyeapps</a>
+                
+                <span>
+                <a><i class="fab fa-github"></i></a>
+                <a><i class="fab fa-google-plus-g"></i></a>
+                <a><i class="fab fa-pinterest-p"></i></a>
+                <a><i class="fab fa-twitter"></i></a>
+                <a><i class="fab fa-facebook-f"></i></a>
+        </span>
+            </div>
+
+        </div>
+
+
+</body>
+
+
+<script src="{% static 'assets/js/jquery-3.2.1.min.js'%}"></script>
+<script src="{% static 'assets/js/popper.min.js'%}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+<script src="{% static 'assets/plugins/slider/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js'%}"></script>
+<script src="{% static 'assets/js/script.js'%}"></script>
+
+
+
+</html>
+
