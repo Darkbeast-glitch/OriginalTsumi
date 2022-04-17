@@ -5,7 +5,9 @@
 {% block content %}
 
 
-    
+
+
+
 <style>
 
     .button{
@@ -77,7 +79,7 @@
                              <div class="slider-captions">
                                  <h1 class="slider-title">TSU MI(SEND ME)</h1>
                                  <p class="slider-text hidden-xs">Do you want to go to the market to buy something but you are feeling lazy or tired?.</p>
-                                 <a href="#" class="btn btn-info hidden-xs">Tsu Mi</a>
+                                 <a href="{% url 'choose'%}" class="btn btn-info hidden-xs">Tsu Mi</a>
                              </div>
                          </div>
                      </div>
@@ -92,7 +94,7 @@
                          <div class="slider-captions">
                              <h1 class="slider-title">When do you want to get those New Shoes?</h1>
                              <p class="slider-text hidden-xs"> <strong>TSU MI </strong> is here ,let us get your shoes from your favourite shoe dealer for you and get it in less that  30min.</p>
-                             <a href="#" class="btn btn-info hidden-xs">Send Me Now!</a>
+                             <a href="{% url 'choose'%}" class="btn btn-info hidden-xs">Send Me Now!</a>
                          </div>
                      </div>
                  </div>
@@ -106,7 +108,7 @@
                          <div class="slider-captions">
                              <h1 class="slider-title">We deliver to your door steps in <strong>30 Mins</strong></h1>
                              <p class="slider-text hidden-xs">You order doesnt take more than 30 min. because we work with a large number of delivery service across the nation, therefore your item arrives on time</p>
-                             <a href="#" class="btn btn-info hidden-xs">Send Me Now!</a>
+                             <a href="{% url 'choose'%}" class="btn btn-info hidden-xs">Send Me Now!</a>
                          </div>
                      </div>
                  </div>
@@ -121,7 +123,8 @@
      <div class="row session-title">
          <h2><i class="fa-solid fa-chalkboard-user"></i>  Procedures</h2>
          <!-- HTML !-->
-       <div class="conatiner" style="padding-left: 80px;">
+      
+       <div class="conatiner" style="margin-left: 45%;">
       <button class="button-62" role="button"><a href="{% url 'choose' %}" style="color: white;">SendMe</a></button>
        </div>
 
@@ -130,20 +133,20 @@
      <div class="row fac-ro">
          <div class="col-md-4">
              <div class="fac-col">
-                 <b><i class="fas fa-user"></i> Create an account</b>
-                 <p>Create an account to be able to track your daily <strong>Send Me</strong>, you can be able to manage your order, cancel your order when you sign up.</p>
+                 <b><i class="fas fa-user"></i> Create an account/Sign In</b>
+                 <p style="text-align: justify;">Create an account to be able to track your daily <strong>Send Me</strong>, you can be able to manage your order, cancel your order when you sign up.</p>
              </div>
          </div>
          <div class="col-md-4">
              <div class="fac-col">
-                 <b><i class="fas fa-list"></i> Select a category</b>
-                 <p>For instance you want us to buy you something in the market, you select <strong>"To The Market"</strong> or you want us to buy you food, you select <strong>"To the Restaurant/Joint"</strong>.</p>
+                 <b><i class="fas fa-list"></i> Click on SendMe button</b>
+                 <p style="align-content: centerm; align-items: flex-start; text-align: justify;">Click on the SendMe Button, if you are using a mobile device you will find it above this post, if you are using a desktop you will find it on the banner(TSUMI) and also above this post.</p>
              </div>
          </div>
          <div class="col-md-4">
              <div class="fac-col">
-                 <b><i class="fas fa-info"></i>Add Your list</b>
-                 <p>Incase you choose <strong>"To the Market"</strong> you would have to manually enterr what you want us to buy and the quantity</p>same applies to categories.
+                 <b><i class="fas fa-info"></i>Choose Manual Order/Call to Order</b>
+                 <p style="text-align: justify;">Incase you choose <strong>"To the Market"</strong> you would have to manually enter what you want us to buy and the quantity</p>same applies to categories.
              </div>
          </div>
           <div class="col-md-4">
@@ -177,11 +180,11 @@
          </div>
          <div class="col-sm-6 no-padding adout-det">
              <div class="layy">
-                 <b>About Business Space</b>
+                 <h3 style="justify-items: center; text-align: center;">About Business Space</h3>
                  <p>Under the Management of <strong>Merch Perch Business</strong> which is headed and managed by <strong>Boakye Julius Nana Acheampong </strong> , planned to establish this problem solving business. <strong>How did we come with this idea?</strong> So, we found out that, many people really feel lazy and sometimes too tired to go to the market, and in the scorching sun, they have to be in a very long queue just to  purchase food ingredients,also we also noticed some people are too busy to go and buy things for them self even though they are highly in need of them. so when it happens this way, what is the person going to do. we thought of this and said we can do something to solve these problems.
-                this is why we came up with <strong>TWU MI </strong> this word transelated to English means <strong>SEND ME </strong> which simply means, let us do your errands for you, so this is one of the easies thing to do , just log on and let us run your errands for you</p>
+                this is why we came up with <strong>TWU MI </strong> this word transelated to English means <strong>SEND ME </strong> which simply means, let us do your errands for you, so this is one of the easies thing to do , just log on and let us run your errands for you.</p>
                  
-                 <p>Our spaces are designed to promote productivity whether you're a team of one or 10, and month-to-month flexibility means your space is just as lively as you are. If you're looking for a well-connected and affordable office space, choose Business Space by Lifeart.</p>
+                 <!-- <p>Our spaces are designed to promote productivity whether you're a team of one or 10, and month-to-month flexibility means your space is just as lively as you are. If you're looking for a well-connected and affordable office space, choose Business Space by Lifeart.</p> -->
                 
              </div>
          </div>
@@ -385,23 +388,23 @@
      <div id="gallery" class="gallery">    
         <div class="container">
            <div class="row">
-             
+    
+        <h3 style="text-align: center; justify-content: center; align-content: center;">Some famous categories</h3>
 
      <div class="gallery-filter d-none d-sm-block">
-         <button class="btn btn-default filter-button" data-filter="all">All</button>
-         <button class="btn btn-default filter-button" data-filter="hdpe">Market</button>
-         <button class="btn btn-default filter-button" data-filter="sprinkle">Boutique</button>
-         <button class="btn btn-default filter-button" data-filter="spray">Delivery</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Sneakers</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Church shoes</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Informations</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Package delivery</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">supermarket</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Makola Market</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Kantamanto </button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Kaneshie </button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">Kejetia</button>
-         <button class="btn btn-default filter-button" data-filter="irrigation">food joints</button>
+         <button class="btn btn-default filter-button" data-filter="all"><a href="{% url 'choose'%}" style="text-decoration: none;">All</a></button>
+         <button class="btn btn-default filter-button" data-filter="hdpe"><a href="{% url 'choose'%}" style="text-decoration: none;">Market</a></button>
+         <button class="btn btn-default filter-button" data-filter="sprinkle"><a href="{% url 'choose'%}" style="text-decoration: none;">Boutique</a></button>
+         <button class="btn btn-default filter-button" data-filter="spray"><a href="{% url 'choose'%}" style="text-decoration: none;">Delivery</a></button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Sneakers</a></button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Church shoes</a></button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Informations</a></button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Package delivery</a></button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">supermarket</a></button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Makola Market</a></button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Kantamanto</a> </button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Kaneshie</a> </button>
+         <button class="btn btn-default filter-button" data-filter="irrigation"><a href="{% url 'choose'%}" style="text-decoration: none;">Kejetia</a></button>
      </div>
      <br/>
 
@@ -451,41 +454,57 @@
      <!-- ######## Gallery End ####### -->                                 
                                    
   <!--  ************************* Contact Us Starts Here ************************** -->
- 
- <section id="contact" class="contact-us-single">
-     <div class="row no-margin">
-         <!-- <div class="col-sm-6 no-padding">
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Teshie%20Camp%202&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:;text-align:right;height:500px;width:1200px;}</style><a href="https://www.embedgooglemap.net">custom google map embed</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style></div></div>
-         </div> -->
-         <div  class="col-sm-12 cop-ck">
-             <h2 >Contact Form</h2>
-                 <div class="row cf-ro">
-                     <div  class="col-sm-3"><label>Enter Name :</label></div>
-                     <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
-                 </div>
-                 <div  class="row cf-ro">
-                     <div  class="col-sm-3"><label>Email Address :</label></div>
-                     <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Email Address" class="form-control input-sm"  ></div>
-                 </div>
-                  <div  class="row cf-ro">
-                     <div  class="col-sm-3"><label>Mobile Number:</label></div>
-                     <div class="col-sm-8"><input type="text" name="name" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
-                 </div>
-                  <div  class="row cf-ro">
-                     <div  class="col-sm-3"><label>Enter  Message:</label></div>
-                     <div class="col-sm-8">
-                       <textarea rows="5" placeholder="Enter Your Message" class="form-control input-sm"></textarea>
-                     </div>
-                 </div>
-                  <div  class="row cf-ro">
-                     <div  class="col-sm-3"><label></label></div>
-                     <div class="col-sm-8">
-                      <button class="btn btn-success btn-sm">Send Message</button>
-                     </div>
-             </div>
-         </div>
-     </div>
- </section>                                   
+    <form action="" method="POST">
+
+        {% csrf_token %}
+        <section id="contact" class="contact-us-single">
+            <div class="row no-margin">
+                <!-- <div class="col-sm-6 no-padding">
+                   <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Teshie%20Camp%202&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:;text-align:right;height:500px;width:1200px;}</style><a href="https://www.embedgooglemap.net">custom google map embed</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:500px;}</style></div></div>
+                </div> -->
+                <div  class="col-sm-12 cop-ck">
+                    <h2 >Contact Form</h2>
+                        <div class="row cf-ro">
+                            <div  class="col-sm-3"><label>Enter Name :</label></div>
+                            <div class="col-sm-8"><input type="text" placeholder="Enter your Full Name" name="Fullname" class="form-control input-sm"  ></div>
+                        </div>
+                        <div  class="row cf-ro">
+                            <div  class="col-sm-3"><label>Email Address :</label></div>
+                            <div class="col-sm-8"><input type="text" name="email" placeholder="Enter a Valid Email Address" class="form-control input-sm"  ></div>
+                        </div>
+                         <div  class="row cf-ro">
+                            <div  class="col-sm-3"><label>Mobile Number:</label></div>
+                            <div class="col-sm-8"><input type="text" name="phonenumber" placeholder="Enter Mobile Number" class="form-control input-sm"  ></div>
+                        </div>
+                         <div  class="row cf-ro">
+                            <div  class="col-sm-3"><label>Enter Message:</label></div>
+                            <div class="col-sm-8">
+                              <textarea rows="5" placeholder="Enter Your Message" name="message"  class="form-control input-sm"></textarea>
+                            </div>
+                        </div>
+                         <div  class="row cf-ro">
+                            <div  class="col-sm-3"><label></label></div>
+                            <div class="col-sm-8">
+                                {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        
+                                        <strong class="text-success"  style="color: red; font-size: 15px;" > <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li></strong>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                             <button class="btn btn-success btn-sm" type="submit">Send Message</button>
+                             <!-- <div class="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
+                                <h3>Thank you for using <strong>TSU MI</strong></h3> <span>your Order has been received Our,TsuMi representative should call you in less than <strong>30 seconds</strong>!</span><br><br>
+                                <span style="color: rgb(66, 206, 38);" id="TsuMi">Click the link  below after 30Sec if you dont receive a call :</span><span id="tel:+233500159892"></span> <a href="tel:+233500159892" target="_blank"><span id="TsuMi_2"></span></a>
+                            </div> -->
+                             
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>    
+    </form>
     <!-- ################# Footer Starts Here#######################--->
 
 
