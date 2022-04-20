@@ -9,4 +9,5 @@ ALGORITHM FOR TSUMI SOCIAL DELIVERY CENTER
 7.forget password
 8.Cart/Order Page
 9.Account or user profile Page
-10. done
+10. Store front is going to be later
+11. done

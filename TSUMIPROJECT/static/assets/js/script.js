@@ -10,6 +10,10 @@ $( document ).ready(function() {
 })
 
 
+if(window.matchMedia("prefers-color-scheme").matches)
+        
+
+documentElement.setAttribute("dark",true);
 
 
 $(document).ready(function(){

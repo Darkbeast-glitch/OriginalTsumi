@@ -26,7 +26,10 @@
 
   <style>
       body {
-    background: #eee
+    background: #eee;
+    background-image: url("https://source.unsplash.com/random/?food-delivery");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #regForm {
@@ -134,13 +137,57 @@ button:focus {
 .thanks-message {
     display: none
 }
+
+div#load_screen {
+ background: #000;
+ opacity: 1;
+ position: fixed;
+ z-index: 1;
+ top: 0px;
+ width: 100%;
+ height: 1600px;
+ font-family: 'Open Sans', sans-serif;
+}
+
+div#load_screen > div#loading {
+ color: #FFF;
+ width: 80%;
+ margin: auto;
+ margin-top: 300px;
+ font-family: 'Open Sans', sans-serif;
+}
+
+#loading > i.fa-spinner {
+ background-color: transparent;
+ color: #28CC9E;
+}
   </style>
   <body>
+
+    <!-- js code to hide the loader -->
+    <script>
+      window.addEventListener("load", function() {
+    var load_screen = document.getElementById("load_screen");
+    document.body.removeChild(load_screen);
+});
+
+
+    </script>
+
+    <!-- End of Js code -->
+    
+    <div id="load_screen" class="text-center">
+      <div id="loading" class="text-center">
+       <h3>TsuMi is Exciting!</h3>
+       <p>Loading content...</p><i class="fa fa-spinner fa-spin fa-2x" aria-
+       hidden="true"></i>
+      </div>
+     </div>
 
     <!-- Navbar here  -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">TsuMi</a>
+          <a class="navbar-brand" href="{% url 'home'%}">TsuMi</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -150,22 +197,22 @@ button:focus {
                 <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">About Us</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Account
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Orders</a></li>
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Report an issue</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled"></a>
+              </li> -->
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -185,6 +232,7 @@ button:focus {
                 <form id="regForm" name = "form" method="post">
                   {% csrf_token %}
                       <h1 id="register">TsuMi Details</h1>
+                      
                       <!-- <small style="font-style: italic;">Where do you want me to go,and what do you want me to buy, you have got your amount?, </small> -->
                       <div class="all-steps" id="all-steps"> <span class="step"><i class="fa fa-user"></i></span> <span class="step"><i class="fa fa-map-marker"></i></span> <span class="step"><i class="fa fa-home"></i></span> <span class="step"><i class="fa fa-shopping-bag"></i></span> <span class="step"><i class="fa fa-list"></i></span> <span class="step"><i class="fa fa-phone"></i></span><span class="step"><i class="fa fa-mobile-phone"></i></span> </div>
                       <div class="tab">
