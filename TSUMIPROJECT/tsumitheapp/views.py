@@ -134,6 +134,21 @@ def order_received(request):
     return render(request, 'TSUMI/order_received.html',context)
 
 
+
+# Profile__page
+
+def Profile_page(request):
+
+    context = {}
+    return render(request, "Account/profile_page.html", context)
+
+# services page
+
+def services(request):
+    context = {}
+    return render(request, 'TSUMI/services.html', context)
+
+
 # def contact(request):
 # 	if request.method == 'POST':
 # 		form = ContactForm(request.POST)
