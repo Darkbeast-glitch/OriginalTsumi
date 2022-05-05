@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import userinformations,Contact_form,Tsu_MI_Details
+from .models import userinformations,Contact_form,Tsu_MI_Details,Popular_Details
 
 # Register your models here.
 
@@ -34,3 +34,5 @@ class TsumiDetailsAdmin(admin.ModelAdmin):
 
 admin.site.register(Tsu_MI_Details,TsumiDetailsAdmin)
     
+
+admin.site.register(Popular_Details)

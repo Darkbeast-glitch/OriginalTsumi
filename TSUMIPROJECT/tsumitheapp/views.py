@@ -1,7 +1,7 @@
 from email import message
 from this import d
 from django.shortcuts import render,redirect
-from tsumitheapp.models import Contact_form, userinformations,Tsu_MI_Details
+from tsumitheapp.models import Contact_form, userinformations,Tsu_MI_Details,Popular_Details
 from django.contrib import messages
 import time
 from django.contrib.auth import authenticate, login, logout
@@ -17,6 +17,7 @@ from django.conf import settings
 # Create your views here.
 
 def Home_view (request):
+    pop_details = Popular_Details.objects.all()
 
     if request.method == 'POST':
         fullname = request.POST['Fullname']
@@ -30,7 +31,10 @@ def Home_view (request):
         messages.success(request,"Your messages has been sent successfully our representative will reach out to you in a short time 😎")
         time.sleep(5)
 
-    context = {}
+    context = {
+
+        'pop_details':pop_details
+    }
     return render(request,'index.html', context)
 
 def customer_info(request):
@@ -147,6 +151,205 @@ def Profile_page(request):
 def services(request):
     context = {}
     return render(request, 'TSUMI/services.html', context)
+
+
+# view for taskers
+
+def Tasker(request):
+
+    context = {
+        'Prices':[
+            {'Deliveryprice' : 50},
+            {'Cleaning' : 150},
+            {'Decoration' : 20},
+            {'Carwash' : 80},
+            {'Deepclean' : 60},
+            {'Errands' : 550},
+           
+        ]
+    }
+    return render (request, 'TASKER/tasker.html',context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # def contact(request):

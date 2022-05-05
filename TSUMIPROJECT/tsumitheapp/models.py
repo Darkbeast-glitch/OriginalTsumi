@@ -2,6 +2,7 @@ from email.headerregistry import Address
 from enum import Flag
 from pyexpat import model
 from statistics import mode
+from tabnanny import verbose
 from unicodedata import digit
 from django.db import models
 
@@ -78,3 +79,18 @@ class Tsu_MI_Details(models.Model):
     class Meta:
         verbose_name = 'TsuMiDetail'
         verbose_name_plural = 'TsuMiDetails'
+
+
+class Popular_Details(models.Model):
+    card_title = models.CharField(max_length=100, blank=False, null=False)
+    card_price = models.CharField(max_length=100, blank=False, null=False)
+    card_img = models.URLField(max_length = 200000)
+
+
+
+    def __str__(self):
+        return self.card_title
+
+    class Meta:
+        verbose_name = 'Popular Detail'
+        verbose_name_plural = 'Popular Details'

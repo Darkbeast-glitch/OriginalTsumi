@@ -9,10 +9,10 @@
 
 
 <style>
-
-    body{
+    body {
         color: #000;
     }
+
     .button {
         /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
         font-size: small;
@@ -46,7 +46,16 @@
         touch-action: manipulation;
         white-space: nowrap;
     }
-
+    .featuredblock{
+        background-image: url("https://media.istockphoto.com/photos/handsome-black-african-american-food-delivery-courier-posing-in-front-picture-id1293175039?b=1&k=20&m=1293175039&s=170667a&w=0&h=t2sJv7uWaH1DAWL-VuTSAo5d5GncF35dZ_PN7-A5KNk=");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-origin: border-box;
+      
+    }
+    
 
     .button-62:not([disabled]):focus {
         box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
@@ -66,27 +75,71 @@
 
     } */
 
-    .header h1{
+
+    .tasker {
+        font-style: normal;
+        font-weight: 400;
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        margin-left: 30rem;
+        font-size: large;
+        padding:  8px;
+         color: white;
+        
+       
+    }
+    .tasker:hover{
+        background-color: #000;
+        color: #fff;
+    }
+
+    .taskermode{
+        text-align: justify;
+        text-transform: capitalize;
+    }
+    .taskermode h4{
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    @media screen and (max-width:500px) {
+        .tasker {
+            margin-left: 75px ;
+           
+        }
+       
+    }
+
+    .header h1 {
         font-size: xx-large;
-        font-weight: 300 ;
+        font-weight: 300;
 
         padding-top: 10px;
         text-align: center;
         justify-content: center;
     }
-    .card{
+
+    .card {
         text-align: center;
     }
-    .card a{
+
+    .card a {
         color: green;
     }
-    @media screen and (max-width: 940px){
-       .card{
-           justify-content: center;
-           gap: 10px;
-           margin: 20px;
-           width: 100px;
-       }
+
+    @media screen and (max-width: 940px) {
+        .card {
+            justify-content: center;
+            gap: 10px;
+            margin: 20px;
+            width: 100px;
+            
+        }
     }
 </style>
 
@@ -213,6 +266,16 @@
                         normal momo and hey, we do pay as you go .</p>
                 </div>
             </div>
+
+            <!-- Become a tasker -->
+            <div class="taskermode">
+            <h4>Are you an Expert?</h4>
+
+            <span>Do you want to make money from what you are an expert in? Are you good at <strong>ANYTHING</strong> at all? Then sign up as a <b>TsuMi Tasker</b> and start making some cool money from what you do best today.</span><br><br>
+            <button type="button" class="btn btn-success  tasker"><a href="{% url 'Tasker'%}" style="font-family:Arial, Helvetica, sans-serif; color: #fff;">Become a Tasker</a></button><br>
+            
+            </div>
+            
         </div>
     </div>
 </section>
@@ -237,7 +300,8 @@
                 person going to do. we thought of this and said we can do something to solve these problems.
                 this is why we came up with <strong>TSUMI </strong> this word translated to English means <strong>SEND
                     ME </strong> which simply means, let us do your errands for you, so this is one of the easiest
-                things to do, just log on and let us run your errands for you.</p>
+                things to do, just log on and let us run your errands for you.
+            </p>
 
 
 
@@ -411,7 +475,7 @@
                             KUMASI
                         </h4>
                         <p>
-                            Every part of Kumasi , Tsu Mi is there!.
+                            Every part of Kumasi , Tsu Mi is there!😃.
                         </p>
                     </div>
                     <div class="product-price">
@@ -475,77 +539,29 @@
 
 <div class="featuredblock">
     <div class="header">
-        <h1>Popular projects in your area
+        <h1 style="color:#fff;">Popular projects in your area
         </h1>
     </div>
+     
     <div class="container pt-5 py-5">
+       
         <div class="row">
-            <div class="col-sm-4">
+             {% for pop in pop_details%}
+            <div class="col-sm-4" style="padding: 10px;">
+               
                 <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/installing-mount-tv-picture-id484548182?b=1&k=20&m=484548182&s=170667a&w=0&h=8HKFAmWKxBGvgbvB_gcJMC0Ro80hSXQ5iY_VS_Dyqwo=" class="card-img-top" alt="Tv Mount">
+                    <img src="{{pop.card_img}}"
+                        class="card-img-top" alt="Tv Mount">
                     <div class="card-body">
-                        <h5 class="card-title">Mount a Tv Mirror</h5>
-                        <p class="card-text"> <a href=""><i class="fa-solid fa-tag"></i>Avg Price: GHC100-200</a></p>
+                        <h5 class="card-title">{{pop.card_title}}</h5>
+                        <p class="card-text"> <a href=""><i class="fa-solid fa-tag"></i>Avg Price: ₵ {{pop.card_price}}</a></p>
                         <a href="#" style="color: #fff;" class="btn btn-primary">Yes! I need this</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/weve-got-you-covered-during-lockdown-picture-id1287632111?b=1&k=20&m=1287632111&s=170667a&w=0&h=PvIcxOiA4Ofhy3FN6S4gcJXlU-EfsmkDnBKt3HmZNw8=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Office/Home Delivery</h5>
-                        <p class="card-text"><a href=""><i class="fa-solid fa-tag"></i>Avg Price: GHC50-100</a></p>
-                        <a href="#" style="color: #fff;" class="btn btn-primary">Yes! I need this</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/bacteriai-will-hunt-you-down-and-i-will-exterminate-you-picture-id1291195956?b=1&k=20&m=1291195956&s=170667a&w=0&h=A9vBTKzU0xJXxyBKeKVhHh-ESSwt1NOZArZ_lazjjh4=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Clean House/bathroom</h5>
-                        <p class="card-text"><a href=""><i class="fa-solid fa-tag"></i>Avg Price: GHC250-350</a>.</p>
-                        <a href="#" style="color: #fff;" class="btn btn-primary">Yes! I need this</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row pt-5">
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/little-girl-smiles-as-she-is-buckled-into-car-seat-picture-id899764892?b=1&k=20&m=899764892&s=170667a&w=0&h=XSx4JqhuKnSYmIbUEcQ3kZycj-pLCqHPQMsRRwjW-ng=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Kids Driver/Everyday</h5>
-                        <p class="card-text"><a href=""><i class="fa-solid fa-tag"></i>Avg Price: GHC400-500/m</a>.</p>
-                        <a href="#" style="color: #fff;" class="btn btn-primary">Yes! I need this</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/afro-female-maid-working-at-hostel-disinfecting-and-preparing-for-the-picture-id1318327834?b=1&k=20&m=1318327834&s=170667a&w=0&h=6_4UXxZivZ7UbvVOKH7AYOFLBX6jgRwC4ourX3q-43o=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">House Woker</h5>
-                        <p class="card-text"><a href=""><i class="fa-solid fa-tag"></i>Avg Price: GHC400-500/m</a>.</p>
-                        <a href="#" style="color:#fff;" class="btn btn-primary">Yes! I need this</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.istockphoto.com/photos/plumber-fixing-white-sink-pipe-with-adjustable-wrench-picture-id1150199946?b=1&k=20&m=1150199946&s=170667a&w=0&h=QuzMCJAHUF1igEN3eFJAmCxDeJCOedav47039sII0_g=" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Fix a Running Toilet</h5>
-                        <p class="card-text"><a href=""><i class="fa-solid fa-tag"></i>Avg Price: GHC200-350</a>.</p>
-                        <a href="#" style="color: #fff;" class="btn btn-primary">Yes! I need this</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {% endfor %}
     </div>
+    
 </div>
 
 
@@ -555,7 +571,7 @@
     <div class="container">
         <div class="row">
 
-            <h3 style="text-align: center; justify-content: center; align-content: center;">Some famous categories</h3>
+            <h3 style="text-align: center; justify-content: center; align-content: center;">Some famous categories of TsuMi</h3>
 
             <div class="gallery-filter d-none d-sm-block">
                 <button class="btn btn-default filter-button" data-filter="all"><a href="{% url 'choose'%}"
