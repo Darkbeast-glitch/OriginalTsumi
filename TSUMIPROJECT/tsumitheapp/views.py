@@ -1,16 +1,17 @@
 from email import message
-from this import d
-from django.shortcuts import render,redirect
-from tsumitheapp.models import Contact_form, userinformations,Tsu_MI_Details,Popular_Details
+from django.shortcuts import get_object_or_404, render,redirect
+from tsumitheapp.models import Contact_form, Payment, userinformations,Tsu_MI_Details,Popular_Details,PaymentFees
 from django.contrib import messages
 import time
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .forms import  NewUserForm,ContactForm
 from django.contrib.auth.forms import AuthenticationForm
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
+from . import forms
+
 
 
 
@@ -127,7 +128,7 @@ def order_manually(request):
 
         Details = Tsu_MI_Details(fullname=fullname, city=city, address= location, send_type=ordertype,category_name=category, phone_number=phonenumber, item_list=itemlist)
         Details.save()
-        return redirect('order_received')
+        return redirect('initiate_payment')
             
 
 
@@ -172,17 +173,33 @@ def Tasker(request):
 
 
 
+# Payments
+def initiate_payment(request:HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        details = Tsu_MI_Details.objects.all()
+        payment_form = forms.PaymentForm(request.POST)
+        payment_fees = PaymentFees.objects.all()
+       
+        if payment_form.is_valid:
+            payment = payment_form.save()
+            return render (request,'Payments/make_payment.html', {'payment':payment, 'payment_fees':payment_fees,'details':details, 'paystack_public_key': settings.PAYSTACK_PUBLIC_KEY})
+
+    else:
+        payment_form = forms.PaymentForm()
+        return render (request,'Payments/initiate_payment.html',{'payment_form':payment_form})
 
 
+# Verify Payment
+def verify_payment(request:HttpRequest, ref:str) -> HttpResponse:
+    payment = get_object_or_404(Payment, ref=ref)
+    verified = payment.verify_payment()
 
-
-
-
-
-
-
-
-
+    if verified:
+        messages.success(request, "Verification Successful")
+    else:
+        messages.error(request, "Verification Failed")
+        
+    return redirect('initiate_payment')
 
 
 

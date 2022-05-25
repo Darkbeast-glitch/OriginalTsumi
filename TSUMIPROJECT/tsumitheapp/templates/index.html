@@ -45,7 +45,20 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         white-space: nowrap;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
     }
+/* 
+    @media screen and (max-width:960px) {
+        .button-62 {
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            background-color: yellow;
+        }
+        
+    } */
     .featuredblock{
         background-image: url("https://media.istockphoto.com/photos/handsome-black-african-american-food-delivery-courier-posing-in-front-picture-id1293175039?b=1&k=20&m=1293175039&s=170667a&w=0&h=t2sJv7uWaH1DAWL-VuTSAo5d5GncF35dZ_PN7-A5KNk=");
         background-repeat: no-repeat;
@@ -61,6 +74,9 @@
         box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
     }
 
+    .sendmebutton{
+        background-color: yellow;
+    }
     .button-62:not([disabled]):hover {
         box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
     }
@@ -71,8 +87,6 @@
         font-size: 1rem;
         box-shadow: 3px 3px #888888;
         border-radius: 5px;
-
-
     } */
 
 
@@ -100,20 +114,33 @@
 
     .taskermode{
         text-align: justify;
-        text-transform: capitalize;
+        
     }
     .taskermode h4{
         text-align: center;
         padding-top: 2rem;
     }
+   
 
+    .slider-img{
+        height: 600px;
+    }
     @media screen and (max-width:500px) {
         .tasker {
             margin-left: 75px ;
            
         }
-       
+
+        .slider-img{
+        height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
     }
+    }
+
+ 
+
 
     .header h1 {
         font-size: xx-large;
@@ -140,7 +167,9 @@
             width: 100px;
             
         }
+       
     }
+
 </style>
 
 
@@ -161,7 +190,7 @@
                     <div class="row">
                         <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
                             <div class="slider-captions">
-                                <h1 class="slider-title">TSU MI(SEND ME)</h1>
+                                <h1 class="slider-title">TSU MI <span style="color: #ff9a5a;">(SEND ME)</span></h1>
                                 <p class="slider-text hidden-xs">Do you want to go to the market to buy something but
                                     you are feeling lazy or tired?.</p>
                                 <a href="{% url 'choose'%}" class="btn btn-info hidden-xs">Tsu Mi</a>
@@ -183,6 +212,21 @@
                             <p class="slider-text hidden-xs"> <strong>TSU MI </strong> is here ,let us get your shoes
                                 from your favourite shoe dealer for you and get it in less that 30min.</p>
                             <a href="{% url 'choose'%}" class="btn btn-info hidden-xs">Send Me Now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><div class="item">
+            <div class="slider-img"><img
+                    src="https://media.istockphoto.com/photos/psychotherapist-comforting-sad-female-patient-during-therapy-session-picture-id1198220402?b=1&k=20&m=1198220402&s=170667a&w=0&h=JI0Ck2LQVenrOMgOyHLJKNky4y-j-SYLsWsxJcTO-UM="
+                    alt=""></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                        <div class="slider-captions">
+                            <h1 class="slider-title">Are you good at  <span style="color:#f17e37;"><i>Something</i></span> ?</h1>
+                            <p class="slider-text hidden-xs"> Become a <strong>Tsumi Tasker</strong> and start making money your way. </p>
+                            <a href="{% url 'Tasker'%}" class="btn btn-info hidden-xs">Become a Tasker!</a>
                         </div>
                     </div>
                 </div>
@@ -218,7 +262,7 @@
 
             <div class="conatiner" style="margin-left: 45%;">
                 <button class="button-62" role="button"><a href="{% url 'choose' %}"
-                        style="color: white;">SendMe</a></button>
+                       id="" style="color: white;">SendMe</a></button>
             </div>
 
 
