@@ -1,0 +1,13 @@
+ALGORITHM FOR TSUMI SOCIAL DELIVERY CENTER
+
+1.Login/Singup system(done)
+2.select category of items you want us to buy for you(done)
+3.ManualOrder or call (done)
+4.add your info location and phone number(automatic calculates the price and give you the total money you need to pay)/YOU CAN PAY ON DELIVERY
+5.make payment
+6.Email authentication
+7.forget password
+8.Cart/Order Page
+9.Account or user profile Page
+10. Store front is going to be later
+11. done

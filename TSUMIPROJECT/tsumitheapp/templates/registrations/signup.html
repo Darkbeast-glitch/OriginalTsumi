@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Account || TsuMi errands platform</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #7abecc;
+        background-image: url("https://media.istockphoto.com/photos/you-just-stay-at-home-and-we-will-deliver-everything-you-order-picture-id1278547173?b=1&k=20&m=1278547173&s=170667a&w=0&h=QF7Swb-sKQd3FbIYIBBCqs_25k2xUo8vFNQ4N4F5k-s=");
+        background-repeat:repeat-x;
+        background-attachment:local;
+        background-size: contain;
+        
+      }
+      .user_card {
+        width: 350px;
+        margin-top: auto;
+        margin-bottom: auto;
+        background: #74cfbf;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+      }
+
+      .form_container {
+        margin-top: 20px;
+      }
+
+      #form-title {
+        color: #fff;
+      }
+      .login_btn {
+        width: 100%;
+        background: #33ccff !important;
+        color: white !important;
+      }
+      .login_btn:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+      }
+      .login_container {
+        padding: 0 2rem;
+      }
+      .input-group-text {
+        background: #f7ba5b !important;
+        color: white !important;
+        border: 0 !important;
+        border-radius: 0.25rem 0 0 0.25rem !important;
+      }
+      .input_user,
+      .input_pass:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home'%}">TsuMi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Orders</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Report an issue</a></li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled"></a>
+            </li> -->
+          </ul>
+          <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+    <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+          <div class="d-flex justify-content-center">
+            <h3
+              id="form-title"
+              style="
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+              "
+            >
+              REGISTER ACCOUNT
+            </h3>
+            
+          </div>
+          {% for message in messages %}
+              <h6 style="color: red; justify-content: center; align-items: center; align-self: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{message}}</h6>
+            {% endfor %}
+          <h5 class="container" style="font-size: small; font-weight: lighter">
+            Incase you are receiving an error please make sure you are not using an name which you have used already and make sure you password matches <strong>Thank You!</strong>
+          </h5>
+          <div class="d-flex justify-content-center form_container">
+            <form method="POST" action="">
+              {% csrf_token %}
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <span class="input-group-text"
+                    ><i class="fas fa-user"></i
+                  ></span>
+                </div>
+                {{form.username}}
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"
+                    ><i class="fas fa-envelope-square"></i
+                  ></span>
+                </div>
+                {{form.email}}
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"
+                    ><i class="fas fa-key"></i
+                  ></span>
+                </div>
+                {{form.password1}}
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"
+                    ><i class="fas fa-key"></i
+                  ></span>
+                </div>
+                {{form.password2}}
+              </div>
+
+              <div class="d-flex justify-content-center mt-3 login_container">
+                <input
+                  class="btn btn-primary btn-outline-primary text-white"
+                  type="submit"
+                  value="Register Account"
+                />
+              </div>
+            </form>
+          </div>
+
+          <!-- Django errors -->
+          <strong><small class="text-danger" style="text-align: center;align-items: center;justify-content: center;">{{form.errors}}</small></strong>
+
+          <div class="mt-4">
+            <div class="d-flex justify-content-center links">
+              Already have an account?
+              <a href="{% url 'login' %}" class="ml-2">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+            //We start indexing at one because CSRF_token is considered and input field 
+            */
+
+      //Query All input fields
+      var form_fields = document.getElementsByTagName("input");
+      form_fields[1].placeholder = "Username..";
+      form_fields[2].placeholder = "Email..";
+      form_fields[3].placeholder = "Enter password...";
+      form_fields[4].placeholder = "Re-enter Password...";
+
+      for (var field in form_fields) {
+        form_fields[field].className += " form-control";
+      }
+    </script>
+  </body>
+</html>
+
