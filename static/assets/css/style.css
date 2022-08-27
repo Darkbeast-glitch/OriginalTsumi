@@ -89,12 +89,12 @@ h1, h2, h3, h4, h5, h6 {
 strong {
   font-family: "mouse-500", Arial, Helvetica, sans-serif; }
 
-body {
-  background-color: #f7f7ff !important;
-  font-family: "mouse-300", Arial, Helvetica, sans-serif;
-  color: #1f1f1;
-  overflow-x:hidden; 
-}
+  body {
+    background-color: #f7f7ff !important;
+    font-family: "mouse-300", Arial, Helvetica, sans-serif;
+    color: #000;
+    overflow-x:hidden; 
+  }
 
 .session-title {
   padding: 30px;
@@ -266,7 +266,7 @@ header {
     .small-menu {
       margin-top: 11px; } }
 
-  @
+  
 .scroll-to-fixed-fixed {
   background-color: #FFF;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -424,7 +424,7 @@ header {
     .home-about {
       height: auto; } }
   .home-about .adout-det {
-    bakground-image: url("../images/slider_demo.jpg");
+    background-image: url("../images/slider_demo.jpg");
     height: 100%;
     padding: big-padding(); }
     .home-about .adout-det .layy {

@@ -1,8 +1,9 @@
 
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <title>Create Account || TsuMi errands platform</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -25,7 +26,11 @@
         padding: 0;
         height: 100%;
         background: #7abecc;
-        background-image: url("/static/images/z-min.jpg");
+        background-image: url("https://media.istockphoto.com/photos/you-just-stay-at-home-and-we-will-deliver-everything-you-order-picture-id1278547173?b=1&k=20&m=1278547173&s=170667a&w=0&h=QF7Swb-sKQd3FbIYIBBCqs_25k2xUo8vFNQ4N4F5k-s=");
+        background-repeat:repeat-x;
+        background-attachment:local;
+        background-size: contain;
+        
       }
       .user_card {
         width: 350px;
@@ -79,6 +84,43 @@
     </style>
   </head>
   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home'%}">TsuMi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Orders</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Report an issue</a></li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled"></a>
+            </li> -->
+          </ul>
+          <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
     <div class="container h-100">
       <div class="d-flex justify-content-center h-100">
         <div class="user_card">
