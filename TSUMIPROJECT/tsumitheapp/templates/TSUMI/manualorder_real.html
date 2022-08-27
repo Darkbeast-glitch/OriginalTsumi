@@ -26,11 +26,13 @@
     } }, 1000);</script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
       body {
     background: #eee;
     background-image: url("https://source.unsplash.com/random/?food-delivery");
     background-attachment: fixed;
     background-size: cover;
+    font-family: 'Poppins', sans-serif;
 }
 
 #regForm {
@@ -269,14 +271,7 @@ div#load_screen > div#loading {
                       </div>
                       <div class="tab">
                           <h6>Manually input the stuff(s) or item(s) with your own price you want us to buy for  you, </h6>
-                          <p><textarea placeholder="
-                            • All value in cedis
-                            • Mushroom = 10
-                            • Pona  = 25
-                            • pepper = 5
-                            • onion = 10
-                            • etc ........
-                            " style="width:100%;  height:200px" oninput="this.className = ''" name="itemlist" required></textarea>
+                          <p><textarea placeholder="Please enter Manually your items" style="width:100%;  height:200px" oninput="this.className = ''" name="itemlist" required></textarea>
                       </div>
                      
                     <!-- <div class="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
