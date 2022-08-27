@@ -1,0 +1,623 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/d571da6210.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="{% static 'assets/images/twumii.jpg'%}" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Become a Tasker Today || TsuMi</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+        background: #ffffff;
+        font-family: 'Poppins';
+    }
+
+    .toplogo {
+        width: 50px;
+    }
+
+    .taskerform span {
+
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+
+
+    }
+
+    .taskerform h4 {
+
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+
+    }
+
+    .taskerform h5 {
+        padding: 10px;
+    }
+
+    .taskerform button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(47, 165, 47);
+        font-size: large;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .taskerform select {
+        font-size: 20px;
+        font-weight: 400;
+        font-style: normal;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .custom-select {
+        width: 100%;
+        padding: 20px;
+        border: 1px grey solid;
+        border-radius: 5px;
+        background: #fff;
+    }
+
+    .alreadyhave {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .display-6 {
+        font-weight: 600;
+        padding: 25px;
+    }
+  
+    .Nina small{
+        text-align: center;
+        align-items: center;
+        margin-left: 50px;
+
+    }
+   
+    #testimonies{
+        background-color:aliceblue;
+        height: 250px;
+    }
+    @media screen and (max-width:480px){
+        #testimonies{
+            background-color: aliceblue;
+            height: 600px;
+            
+        }
+
+
+    }
+    @media screen and (min-width:600px) and (max-width:980) {
+       
+
+        #testimonies{
+        background-color:aliceblue;
+        height: 60rem;
+    }
+
+        .taskerform {
+            justify-content: center;
+            justify-items: center;
+            justify-self: center;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            margin-left: 80px;
+            width: 80%;
+        }
+        
+       
+        .taskerform h1 {
+            text-align: center;
+            padding-top: 30px;
+            font-size: 80px;
+        }
+
+        .taskerform h4,
+        h5 {
+            font-size: 50px;
+
+        }
+
+        .custom-select {
+            padding: 40px;
+            font-size: 500px;
+            font-size: 30px;
+        }
+
+
+       
+
+        button {
+            padding: 30px;
+        }
+    }
+
+    .section1 {
+        text-align: center;
+    }
+
+    .section1 p {
+
+        font-size: large;
+    }
+
+    .section1 h1 {
+        padding-top: 80px;
+        font-weight: 600;
+        font-family: 'Poppins';
+    }
+
+    .section3 h1 {
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    .section3 p {
+        font-size: 20px;
+        font-weight: 100;
+    }
+    .bigsection h2{
+        font-weight: 600;
+        font-size: 25px;
+    }
+</style>
+
+
+
+<body>
+
+    <!-- Tsumi header logo -->
+    <!-- Navbar here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home'%}">TsuMi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Orders</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Report an issue</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                <a class="nav-link disabled"></a>
+              </li> -->
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navbar -->
+    <hr>
+    <div class="container-fluid pt-5 py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <img style="width: 100%; border-radius: 10px;"
+                    src="https://media.istockphoto.com/photos/bacteriai-will-hunt-you-down-and-i-will-exterminate-you-picture-id1291195956?b=1&k=20&m=1291195956&s=170667a&w=0&h=A9vBTKzU0xJXxyBKeKVhHh-ESSwt1NOZArZ_lazjjh4="
+                    alt="Tsumi Takser">
+            </div>
+
+            <!-- TsuMI side of that talks about how to become a tasker -->
+            <div class="col-md-4 taskerform pt-3">
+                <h1>Earn Money your way</h1><br>
+                <h4>See how much you can make <br>
+                    tasking on TsuMi</h4>
+                <br>
+                <h5>Select your Area</h5>
+                <form action="">
+
+                    <select name="Chosen" class="custom-select">
+                        <option name="Selected" selected="">Teshie</option>
+                        <option name="Selected" value="1">East Legon</option>
+                        <option name="Selected" value="2">Kaneshie</option>
+                        <option name="Selected" value="3">Kokomlemle</option>
+                        <option name="Selected" value="3">Tesano</option>
+                        <option name="Selected" value="3">West Legon/Westlands</option>
+                        <option name="Selected" value="3">Abelemkpe</option>
+                        <option name="Selected" value="3">Cantonments</option>
+                        <option name="Selected" value="3">Labone</option>
+                        <option name="Selected" value="3">Burma Camp</option>
+                        <option name="Selected" value="3">Tse-Addo</option>
+                        <option name="Selected" value="3">Mamprobi</option>
+                        <option name="Selected" value="3">Korle Gonno</option>
+                        <option name="Selected" value="3">Lartebiokorshie</option>
+                        <option name="Selected" value="3">Mataheko</option>
+                        <option name="Selected" value="3">Dansoman</option>
+                        <option name="Selected" value="3">Adenta</option>
+                        <option name="Selected" value="3">Adabraka</option>
+                        <option name="Selected" value="3">Asylum Down</option>
+                        <option name="Selected" value="3">McCarthy Hill</option>
+                        <option name="Selected" value="3">Airport Hills</option>
+                        <option name="Selected" value="3">Airport Residential Area</option>
+                        <option name="Selected" value="3"> Roman Ridge</option>
+                        <option name="Selected" value="3"> Kanda</option>
+
+                    </select>
+
+                    <h5>Choose a Category</h5>
+                    <select name="choose" class="custom-select">
+                        <option selected="Delivery">Decoration</option>
+                        <option value="Delivery">Delivery</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="CarWashing">Car Washing</option>
+                        <option value="4">Deep Clean</option>
+                        <option value="5">Electrical help</option>
+                        <option value="6">Errands</option>
+                        <option value="7">Event Staffing</option>
+                        <option value="8">Personal Assistant</option>
+                        <option value="9">Help Moving</option>
+                    </select>
+
+                    <h1 class="display-6"><b>¢20-30/h</b><i class="fa-solid fa-circle-question"
+                            style="color:grey; font-size: 20px; padding: 10px;"></i></h1>
+
+                </form>
+
+
+                <button type="button" class="btn btn-success "><strong>Get Started</strong></button>
+                <h4 class="alreadyhave">Already have an account? <a href=""
+                        style="color:green; text-decoration: none; text-align: center; justify-content: center; align-items: center;">Sign
+                        in</a></h4>
+
+            </div>
+                <div style="text-align: center;"> 
+                    <h3><strong>Cateogries and Price Table </strong></h3>
+                <small>Take note: <i>These are paid hourly, you therefore pay according to the hours in which your task was completed</i></small>
+                </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price in GHC(/h)</th>
+                    <th scope="col">Price in USD(/h)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Decoration</td>
+                    <td>30</td>
+                    <td>3.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Help Moving</td>
+                    <td>30</td>
+                    <td>3.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Errand</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Interior Design</td>
+                    <td>35</td>
+                    <td>4.20</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Laundry & Ironing</td>
+                    <td>30</td>
+                    <td>3.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Heavy Lifting</td>
+                    <td>60</td>
+                    <td>7.79</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Minor Home Repairs</td>
+                    <td>40</td>
+                    <td>5.19</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Mounting</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Organization</td>
+                    <td>50</td>
+                    <td>6.59</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Packing & Unpacking</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Painting</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>Pet sitting</td>
+                    <td>60</td>
+                    <td>7.79</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>Plumber Help</td>
+                    <td>60</td>
+                    <td>7.79</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">13</th>
+                    <td>Power Washing</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">14</th>
+                    <td>Sewing</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">15</th>
+                    <td>Shopping</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">16</th>
+                    <td>Smart Home Installation</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">17</th>
+                    <td>Yard work & Removal</td>
+                    <td>50</td>
+                    <td>6.49</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">18</th>
+                    <td>Window Cleaning</td>
+                    <td>20</td>
+                    <td>2.90</td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              
+            <div class="section1">
+                <h1 class="display-6"> Flexible work, at your fingertips</h1>
+                <p>Find local jobs that fit your skills and schedule. <br> With TaskRabbit, you have the freedom and
+                    <br> support to be your own boss.</p>
+            </div>
+            
+
+            <!-- Tsumi Procedure steps and how to make it steps -->
+            <div class="bigsection">
+                <div class="contain-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDUgNTYuMzkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTI2LjExLjg3YzMuMy4wOCA0LjE3IDcuODEgNC4xNyA3LjgxaC0zMC4wM3MuMjMtNiAyLjA5LTcgMTguMTgtLjkzIDIzLjc3LS44MXoiIGZpbGw9IiNmN2I1MTkiLz48cGF0aCBkPSJtMS41NCA1NGMxLjkyIDEuOTEgMy4zOCAxLjkxIDkuMDggMS42NnMxOC4wNi0uMjQgMTguMDYtLjI0YTkuODEgOS44MSAwIDAgMSAtNi0zLjVjLTEuNjItMi4xOS0yLjEyLTQuNjYtMS44Ny00LjQyaC0yMC41NnMtLjEzIDUuMDYgMS4yOSA2LjV6IiBmaWxsPSIjZjdiNTE5Ii8+PGcgZmlsbD0iIzQwNDg1MiI+PHBhdGggZD0ibTI1LjU5IDU0Ljg5aC0xOS4zNmE1IDUgMCAwIDEgLTIuNjMtLjU4IDQuMzUgNC4zNSAwIDAgMSAtMi4xMi0zLjcxYzAtMi44OCAwLTUuNzYgMC04LjY1di0zNS44NmE1LjE3IDUuMTcgMCAwIDEgLjIzLTEuNyA0LjMgNC4zIDAgMCAxIDQtMi45YzQuMTItLjA2IDguMjQgMCAxMi4zNiAwaDEwLjU3YTYuNzUgNi43NSAwIDAgMSAxLjg1LjE1IDQuMzIgNC4zMiAwIDAgMSAzLjE0IDQuMTF2MjMuOTRhLjc0Ljc0IDAgMCAwIDEuNDggMHYtMjAuNjlhMjIuNDkgMjIuNDkgMCAwIDAgLS4xMS00LjQ1IDUuODQgNS44NCAwIDAgMCAtNC00LjMyIDcuODggNy44OCAwIDAgMCAtMi4yNC0uMjNoLTIyYy0uNCAwLS44IDAtMS4yIDBhNS43OSA1Ljc5IDAgMCAwIC01IDMuMiA4LjU4IDguNTggMCAwIDAgLS42IDR2NDMuNDNhNS44MyA1LjgzIDAgMCAwIDIuNzUgNC44N2MxLjczIDEuMSAzLjguODcgNS43NS44N2gxNy4xM2EuNzQuNzQgMCAwIDAgMC0xLjQ4eiIvPjxwYXRoIGQ9Im0yOCA1NC44OWgtMi40MWEuNzQuNzQgMCAxIDAgMCAxLjQ4aDIuNDFhLjc0Ljc0IDAgMSAwIDAtMS40OHoiLz48cGF0aCBkPSJtMjkuMzYgNTQuODloLTEuMzZhLjczLjczIDAgMCAwIC0uNTIuMjIuNzQuNzQgMCAwIDAgLS4yMi41Mi43My43MyAwIDAgMCAuNzQuNzRoMS4zNGEuOC44IDAgMCAwIC41My0uMjEuNzkuNzkgMCAwIDAgLjIyLS41My43Ny43NyAwIDAgMCAtLjIyLS41Mi43NS43NSAwIDAgMCAtLjUzLS4yMnoiLz48cGF0aCBkPSJtLjc0IDkuODloMzMuNjNhLjc0Ljc0IDAgMCAwIDAtMS40OGgtMzMuNjNhLjc0Ljc0IDAgMCAwIDAgMS40OHoiLz48cGF0aCBkPSJtLjc0IDQ4aDIwLjc1YS43NS43NSAwIDAgMCAwLTEuNDloLTIwLjc1YS43NS43NSAwIDAgMCAwIDEuNDl6Ii8+PHBhdGggZD0ibTM5IDUwLjY4cS0uMzYuMjEtLjc1LjM5YS42MS42MSAwIDAgMCAtLjIuMTkuNjYuNjYgMCAwIDAgLS4xNC4yNi41Ny41NyAwIDAgMCAwIC4yOS40OS40OSAwIDAgMCAuMDkuMjhsLjExLjE1YS45Mi45MiAwIDAgMCAuMzMuMTloLjJhLjY5LjY5IDAgMCAwIC4zNy0uMXEuMzktLjE4Ljc1LS4zOWEuNTUuNTUgMCAwIDAgLjIxLS4xOS41OC41OCAwIDAgMCAuMTMtLjI2LjQ4LjQ4IDAgMCAwIDAtLjI5LjU3LjU3IDAgMCAwIC0uMDgtLjI4bC0uMTItLjE1YS43OC43OCAwIDAgMCAtLjMzLS4xOWgtLjE5YS43Mi43MiAwIDAgMCAtLjM4LjF6Ii8+PHBhdGggZD0ibTQyLjgxIDQ2LjMydi4wOGMwLS4xIDAtLjEyIDAgMHMwIC4xMS0uMDcuMTZsLS4xNS4zM2MtLjExLjIxLS4yMy40Mi0uMzUuNjNzLS4yNS40MS0uMzkuNmwtLjIxLjMtLjA2LjA3LS4xMS4xNGEuNzkuNzkgMCAwIDAgLS4yMi41Mi43NS43NSAwIDAgMCAxLjI3LjUzIDExLjMgMTEuMyAwIDAgMCAxLjcxLTIuODcuNzUuNzUgMCAwIDAgLS41Mi0uOTIuNzUuNzUgMCAwIDAgLS41Ny4wOC44NS44NSAwIDAgMCAtLjM1LjQ0eiIvPjxwYXRoIGQ9Im00NSA0My41NWExMC42MiAxMC42MiAwIDEgMCAtOC4zMyA5LjYyYy45My0uMTkuNTMtMS42Mi0uNC0xLjQzYTkuMTYgOS4xNiAwIDEgMSA3LjI0LTguMTljLS4wNiAxIDEuNDIgMSAxLjQ5IDB6Ii8+PHBhdGggZD0ibTI4Ljg2IDQzLjcxIDMuNDYgMy45NWEuNzQuNzQgMCAwIDAgMSAwbDYuMDYtNi45My44Ni0xYy42My0uNzEtLjQyLTEuNzctMS0xbC02LjA2IDYuOTMtLjg2IDFoMWwtMy40Ni00Yy0uNjMtLjcyLTEuNjguMzMtMS4wNSAxLjA1eiIvPjwvZz48Y2lyY2xlIGN4PSIxNy45OCIgY3k9IjI1LjE4IiBmaWxsPSIjZjdiNTE5IiByPSI5LjIyIi8+PHBhdGggZD0ibTIyLjg2IDM0LjZhMTAuNjEgMTAuNjEgMCAxIDEgMy43Mi0xNS42Yy41Mi43MSAxLjcyIDAgMS4xOS0uN2ExMiAxMiAwIDAgMCAtMTguNzctMS4wMSAxMiAxMiAwIDAgMCAxNC42IDE4LjVjLjgtLjQuMS0xLjYtLjY5LTEuMTl6IiBmaWxsPSIjNDA0ODUyIi8+PHBhdGggZD0ibTI2LjgyIDMxYy0uMTUuMjMtLjMyLjQ2LS40OS42OGwuMTEtLjE0YTEyLjQ1IDEyLjQ1IDAgMCAxIC0xLjE0IDEuMjcuNjkuNjkgMCAwIDAgMCAxIC43LjcgMCAwIDAgMSAwIDExLjg3IDExLjg3IDAgMCAwIDEuNy0yLjA3LjY5LjY5IDAgMSAwIC0xLjE5LS43eiIgZmlsbD0iIzQwNDg1MiIvPjxwYXRoIGQ9Im0yOC41OCAyNS4xOHYuODkuMzdzMCAuMjkgMCAuMTJ2LjE5YTExLjM2IDExLjM2IDAgMCAxIC0uMzcgMS42MS42OS42OSAwIDAgMCAuNDguODUuNzEuNzEgMCAwIDAgLjg1LS40OSAxMi4xIDEyLjEgMCAwIDAgLjQ2LTMuNTQuNjkuNjkgMCAwIDAgLS42OS0uNjkuNy43IDAgMCAwIC0uNjkuNjl6IiBmaWxsPSIjNDA0ODUyIi8+PHBhdGggZD0ibTE3LjA2IDE3LjM0djguM2EuNy43IDAgMCAwIDEgLjZsNi40NS0yLjc3YS42OS42OSAwIDAgMCAuMjUtLjk0LjcxLjcxIDAgMCAwIC0uOTUtLjI1bC02LjQxIDIuNzcgMSAuNTl2LTguM2EuNjkuNjkgMCAwIDAgLTEuMzggMHoiIGZpbGw9IiM0MDQ4NTIiLz48cGF0aCBkPSJtOS40NSAyNi4xaDIuNzZhLjcuNyAwIDAgMCAuNy0uNjkuNzEuNzEgMCAwIDAgLS43LS42OWgtMi43NmEuNjkuNjkgMCAxIDAgMCAxLjM4eiIgZmlsbD0iIzQwNDg1MiIvPjxwYXRoIGQ9Im0xNy41MiAzMS42NHYyLjc2YS42OS42OSAwIDEgMCAxLjM4IDB2LTIuNzZhLjY5LjY5IDAgMSAwIC0xLjM4IDB6IiBmaWxsPSIjNDA0ODUyIi8+PC9zdmc+"
+                                alt="" style="width: 60px;">
+                            <h2 style="padding-top: 20px;">Be your own boss</h2>
+                            <p>Work how, when, and where you want. Offer <br> services in 50+ categories and set a
+                                flexible <br> schedule and work area.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDggMzUuOTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgZmlsbD0iI2Y3YjUxOSIgaGVpZ2h0PSIyMC43MyIgcng9IjEuMTEiIHdpZHRoPSIzOC4yIiB4PSI0Ljk2IiB5PSI5LjU3Ii8+PHJlY3QgZmlsbD0iI2ZmZiIgaGVpZ2h0PSIyMC43MyIgcng9IjEuMTEiIHdpZHRoPSIzOC4yIiB4PSI0LjgzIiB5PSI3LjQ2Ii8+PHBhdGggZD0ibTQxLjkyIDI3LjU4aC0zNS4wN2MtLjc2IDAtMS4zNi4xLTEuNDEtLjg0LS4xLTEuNzkgMC0zLjYxIDAtNS40di03LjgyYTI4LjczIDI4LjczIDAgMCAxIDAtNC44MmMuMTUtLjg3IDEuMTItLjYzIDEuODMtLjYzaDMzYy42MyAwIDEuOTQtLjI3IDIuMTUuNWE0LjkgNC45IDAgMCAxIDAgMS4yMXYxNi42MWMwIC41OC4xMiAxLjExLS42NiAxLjIxcy0uNDQgMS4yOC4zMyAxLjE4YzEuOTEtLjI2IDEuNTUtMi40MSAxLjU1LTMuOHYtMTQuODVjMC0xLjM5LjE2LTMuMTItMS43My0zLjI4LTMtLjI0LTYuMSAwLTkuMDkgMGgtMTYuNTRjLTMuMzggMC02LjgxLS4xNi0xMC4yIDAtMS41OS4wOC0xLjg2IDEuMjctMS44NiAyLjU3djE0LjU4YzAgMS4xNC0uMzggMy4yLjQxIDQuMTdzMiAuNjMgMi45MS42M2gzNC4zOGEuNjEuNjEgMCAwIDAgMC0xLjIyeiIgZmlsbD0iIzQwNDg1MiIvPjxjaXJjbGUgY3g9IjIzLjY4IiBjeT0iMTguMDYiIGZpbGw9IiNmN2I1MTkiIHI9IjUuNzQiLz48ZyBmaWxsPSIjNDA0ODUyIj48cGF0aCBkPSJtMjIuNzQgMjIuODFhNS4wOCA1LjA4IDAgMSAxIDQuMzYtOC44MWMuNTkuNTEgMS40Ni0uMzUuODctLjg2YTYuMyA2LjMgMCAwIDAgLTkuNTYgOCA2LjQxIDYuNDEgMCAwIDAgNCAyLjc4Yy43Ni4xNiAxLjA5LTEgLjMyLTEuMTh6Ii8+PHBhdGggZD0ibTI2LjIzIDIyLjI1Yy0uMi4xMS0uNC4yMS0uNjEuM2wuMTQtLjA2YTUuOSA1LjkgMCAwIDEgLTEuNDQuMzkuNjEuNjEgMCAwIDAgLS40Mi43NS42My42MyAwIDAgMCAuMjguMzYuNjkuNjkgMCAwIDAgLjQ3LjA2IDYuMDYgNi4wNiAwIDAgMCAyLjE5LS43NS42MS42MSAwIDAgMCAuMjItLjgzLjYyLjYyIDAgMCAwIC0uODMtLjIyeiIvPjxwYXRoIGQ9Im0yOC44MSAxNy44MnYuNDRhMS41IDEuNSAwIDAgMSAwIC4yMnYuMDVhNS41OCA1LjU4IDAgMCAxIC0uMTguODFjMCAuMTItLjA4LjI1LS4xMy4zN2ExIDEgMCAwIDAgMCAuMWwtLjA3LjE2YTcgNyAwIDAgMSAtLjQuNy42MS42MSAwIDAgMCAuMjIuODMuNjIuNjIgMCAwIDAgLjgzLS4yMiA2LjMzIDYuMzMgMCAwIDAgMS0zLjQ2LjYxLjYxIDAgMCAwIC0xLjIyIDB6Ii8+PHBhdGggZD0ibTIxLjUxIDI1LjU1aC05LjU3bC42MS42MWE1IDUgMCAwIDAgLTQuODgtNC44OGwuNjEuNjF2LTcuNzJsLS42MS42MWE1IDUgMCAwIDAgNC44OC00Ljg4bC0uNjEuNjFoNC42NGEuNjEuNjEgMCAwIDAgMC0xLjIyaC00LjY0YS42My42MyAwIDAgMCAtLjYxLjYxIDMuNzEgMy43MSAwIDAgMSAtMy42NiAzLjY2LjYyLjYyIDAgMCAwIC0uNi42MXY3LjcyYS42MS42MSAwIDAgMCAuNi42MSAzLjcgMy43IDAgMCAxIDMuNjYgMy42Ni42Mi42MiAwIDAgMCAuNjEuNjFoOS41N2EuNjEuNjEgMCAwIDAgMC0xLjIyeiIvPjxwYXRoIGQ9Im0yOC4yNiAyNS41NWgtMy40NWEuNjEuNjEgMCAwIDAgLS42MS42MS42Mi42MiAwIDAgMCAuNjEuNjFoMy40NWEuNjEuNjEgMCAwIDAgLjYxLS42MS42Mi42MiAwIDAgMCAtLjYxLS42MXoiLz48cGF0aCBkPSJtMjcgMTAuNTFoOWwtLjYxLS42MWE1IDUgMCAwIDAgNC44OCA0Ljg4bC0uNjEtLjYxdjcuNzJsLjYxLS42MWE1IDUgMCAwIDAgLTQuODggNC44OGwuNjEtLjYxaC00LjgxYS42MS42MSAwIDAgMCAwIDEuMjJoNC44MWEuNjIuNjIgMCAwIDAgLjYxLS42MSAzLjcxIDMuNzEgMCAwIDEgMy42Ni0zLjY2LjYyLjYyIDAgMCAwIC42MS0uNjF2LTcuNzJhLjYyLjYyIDAgMCAwIC0uNjEtLjYxIDMuNzIgMy43MiAwIDAgMSAtMy42Ni0zLjY2LjYyLjYyIDAgMCAwIC0uNjEtLjYxaC05YS42MS42MSAwIDAgMCAwIDEuMjJ6Ii8+PHBhdGggZD0ibTE5LjQgMTAuNTFoNC4yM2EuNjEuNjEgMCAwIDAgMC0xLjIyaC00LjIzYS42My42MyAwIDAgMCAtLjYxLjYxLjYyLjYyIDAgMCAwIC42MS42MXoiLz48L2c+PHBhdGggZD0ibTMuNDEgMS45MmMtLjU0LS41NC0uMzItMS45Mi0uOS0xLjkycy0uMzUgMS4zOC0uODkgMS45MmMtLjgxLjgxLTEuNjIuODctMS42MiAxLjJzLjY5LjI3IDEuNDggMS4wNmMuNDEuNDEuNjMgMi4xIDEgMi4xcy42My0xLjY5IDEtMi4xYy44Ni0uNzkgMS41Mi0uNzQgMS41Mi0xLjA2cy0uNzgtLjM5LTEuNTktMS4yeiIgZmlsbD0iI2Y3YjUxOSIvPjxwYXRoIGQ9Im00Ni4zOCAzMS42MWMtLjU0LS41NC0uMzItMS45Mi0uODktMS45MnMtLjM2IDEuMzgtLjkgMS45MmMtLjgxLjgxLTEuNjIuODgtMS42MiAxLjJzLjY5LjI3IDEuNDggMS4wNmMuNDEuNDIuNjQgMi4xIDEgMi4xcy42Mi0xLjY4IDEtMi4xYy43OS0uNzkgMS40OC0uNzMgMS40OC0xLjA2cy0uNzQtLjM5LTEuNTUtMS4yeiIgZmlsbD0iI2Y3YjUxOSIvPjwvc3ZnPg=="
+                                alt="" style="width: 100px;">
+                            <h2 style="padding-top: 20px;">Set your own rates
+                            </h2>
+                            <p>You keep 100% of what you charge, plus tips! <br> Invoice and get paid directly through
+                                our <br> secure payment system.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDUgNDguODEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTQzLjU2IDE3aC0xNS4yNmE3LjgyIDcuODIgMCAwIDAgLTIuMTYuMTUgNCA0IDAgMCAwIC0yLjg3IDMuODVjLS4wNSAyLjA2IDAgNC4xMyAwIDYuMTl2NS45NWgtMTMuMWE1LjYgNS42IDAgMCAwIC0yLjE3LjI1IDQgNCAwIDAgMCAtMi41IDMuNjl2Mi4wNSA4LjQ5YS44Ny44NyAwIDAgMCAxLjczIDB2LTEwLjFhMi41IDIuNSAwIDAgMSAxLTIuMzQgMy4yMiAzLjIyIDAgMCAxIDEuODMtLjM0aDE0YS44OC44OCAwIDAgMCAuOTQtLjg0di0xMi41MWEyLjU3IDIuNTcgMCAwIDEgMS4wNS0yLjQ5IDMuNjQgMy42NCAwIDAgMSAyLjA2LS4zNGgxNS40NWEuODcuODcgMCAwIDAgMC0xLjY2eiIgZmlsbD0iIzQwNDg1MiIvPjxwYXRoIGQ9Im00MS43NCA2LjljLS4zNC0yLjA5LS42OS00LjE4LTEtNi4yN2EuODkuODkgMCAwIDAgLTEuMS0uNjNsLTUuOSAxLjQ5LS44NS4yMWEuODcuODcgMCAwIDAgLjQ2IDEuNjhsNC4zOC0xLjExLTUuODUgOC45MmgtMTIuNjQtMS44N2EuODguODggMCAwIDAgLS44Ny44N3EwIDYuNzEtLjA1IDEzLjQydjEuMDdoLTE1LjYxYS44Ny44NyAwIDAgMCAwIDEuNzNoMTYuNDdhLjg4Ljg4IDAgMCAwIC44Ny0uODdxMC02LjcuMDUtMTMuNDJ2LTEuMDhoMTEuMTUgMi40OWExLjMxIDEuMzEgMCAwIDAgMS4yOS0uNTNjMS4xMi0xLjYzIDIuMTctMy4zIDMuMjUtNC45NWwyLjk0LTQuNDMuNzIgNC4zN2EuODcuODcgMCAxIDAgMS42Ny0uNDZ6IiBmaWxsPSIjNDA0ODUyIi8+PHBhdGggZD0ibTkuNzkgNDguODF2LTguNTZhMy4xIDMuMSAwIDAgMSAzLjA5LTMuMDloMTQuNjl2LTEzYTMuMDkgMy4wOSAwIDAgMSAzLjA5LTMuMTZoMTQuMzR2MjcuNzh6IiBmaWxsPSIjZjdiNTE5Ii8+PC9zdmc+"
+                                alt="" style="width: 70px;">
+                            <h2 style="padding-top: 20px;">Grow your business
+                            </h2>
+                            <p>We connect you with clients in your area, and <br> ways to market yourself — so you can
+                                focus <br> on what you do best.</p>
+                        </div>
+                    </div>
+                    <!-- Tsumi section 3 steps -->
+                    <div class="pt-5 py-5 ">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <img style="width: 90%; border-radius: 10px;"
+                                    src="https://media.istockphoto.com/photos/happy-african-american-woman-receiving-box-from-courier-at-home-picture-id1326431774?b=1&k=20&m=1326431774&s=170667a&w=0&h=eL37CFsCET5Ffo7mC5mXA4x7LNQgmHzyNz0qI4w7Uaw="
+                                    alt="Tsumi Takser">
+                            </div>
+                            <!-- WGat us TsuMi SEction -->
+                            <div class="col-lg-4 section3" style="padding-top: 30px; ">
+                                <h1>What is TsuMi?</h1><br>
+                                <p>TsuMi as already mentioned means <strong>SendMe</strong>, <b>TsuMi</b> is an errand
+                                    platform that runs daily errands for busy people who can't make it to certain places
+                                    due to their daily busy schedules, <b>TsuMi</b> connects busy people in need of help
+                                    with trusted local Taskers who can lend a hand with everything from home repairs to
+                                    errands. As a Tasker, you can get paid to do what you love, when and where you want
+                                    — all while saving the day for someone in your city.</p>
+                            </div>
+                            <!-- decentans -->
+                            
+                            <div class="section4 pt-5" style="text-align: center;">
+                                <h1 class="display-6"> Getting Started </h1>
+                               
+                            </div>
+                            <div class="bigsection">
+                                <div class="contain-fluid pt-5">
+                                    <!-- row1 -->
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNTYiIHZpZXdCb3g9IjAgMCA1NiA1NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI5LjQxMTggNDUuODI2N0MzOS4wNTEgNDUuODI2NyA0Ni44NjUyIDM4LjEwMTEgNDYuODY1MiAyOC41NzFDNDYuODY1MiAxOS4wNDEgMzkuMDUxIDExLjMxNTQgMjkuNDExOCAxMS4zMTU0QzE5Ljc3MjYgMTEuMzE1NCAxMS45NTg1IDE5LjA0MSAxMS45NTg1IDI4LjU3MUMxMS45NTg1IDM4LjEwMTEgMTkuNzcyNiA0NS44MjY3IDI5LjQxMTggNDUuODI2N1oiIGZpbGw9IiNGN0I1MTkiLz4KPHBhdGggZD0iTTM5LjExODUgNDUuNDY5QzM4LjYxMzcgNDUuNzcxNCAzOC4wOTE3IDQ2LjA0NDkgMzcuNTU1MSA0Ni4yODhDMzcuMzY4IDQ2LjQwNDUgMzcuMjMwOSA0Ni41ODUyIDM3LjE3MDEgNDYuNzk1NUMzNy4xMzgyIDQ2LjkwMyAzNy4xMjg0IDQ3LjAxNTggMzcuMTQxMiA0Ny4xMjcxQzM3LjE1MzkgNDcuMjM4NSAzNy4xODkgNDcuMzQ2MiAzNy4yNDQ1IDQ3LjQ0MzlDMzcuMjk5OSA0Ny41NDE3IDM3LjM3NDUgNDcuNjI3NSAzNy40NjM5IDQ3LjY5NjRDMzcuNTUzMyA0Ny43NjUzIDM3LjY1NTcgNDcuODE1OSAzNy43NjUxIDQ3Ljg0NTFIMzcuOTg2OEMzOC4xNDI1IDQ3Ljg0ODEgMzguMjk2IDQ3LjgwODEgMzguNDMwMSA0Ny43Mjk4QzM4Ljk2MTcgNDcuNDg0MiAzOS40Nzk2IDQ3LjIxMDkgMzkuOTgxOCA0Ni45MTA4QzQwLjE3NDkgNDYuNzk4MSA0MC4zMTY5IDQ2LjYxNjUgNDAuMzc4NSA0Ni40MDMzQzQwLjQwODkgNDYuMjk1NyA0MC40MTczIDQ2LjE4MzEgNDAuNDAzMyA0Ni4wNzIyQzQwLjM4OTMgNDUuOTYxMyA0MC4zNTMxIDQ1Ljg1NDMgNDAuMjk2OCA0NS43NTc0QzQwLjI0MTggNDUuNjYxNiA0MC4xNjgxIDQ1LjU3NzYgNDAuMDggNDUuNTEwM0MzOS45OTE4IDQ1LjQ0MyAzOS44OTEgNDUuMzkzNyAzOS43ODM1IDQ1LjM2NTJDMzkuNTU5MyA0NS4zMTA5IDM5LjMyMjcgNDUuMzM5NiAzOS4xMTg1IDQ1LjQ0NTlWNDUuNDY5WiIgZmlsbD0iIzQwNDg1MiIvPgo8cGF0aCBkPSJNNDcuNDI0OCAzNi4wNjg1QzQ3LjM1NDMgMzYuMjU3NiA0Ny4yNzI0IDM2LjQ0MjUgNDcuMTc5OCAzNi42MjIxTDQ2Ljg2NDggMzcuMjkxMUM0Ni42MzE0IDM3Ljc0MSA0Ni4zOTgxIDM4LjE2NzcgNDYuMTQxNCAzOC41OTQ1QzQ1Ljg4NDggMzkuMDIxMyA0NS42MTY0IDM5LjQ0ODEgNDUuMzI0OCAzOS44NTE4QzQ1LjAzMzEgNDAuMjU1NSA0NC43OTk4IDQwLjU2NjkgNDQuNDg0OCA0MS4wMDUyQzQ0LjM5ODYgNDEuMTY2NSA0NC4zNjY5IDQxLjM1MDkgNDQuMzk0NCA0MS41MzEyQzQ0LjQyMTkgNDEuNzExNiA0NC41MDcyIDQxLjg3ODYgNDQuNjM3NiA0Mi4wMDc2QzQ0Ljc2ODEgNDIuMTM2NSA0NC45MzY5IDQyLjIyMDggNDUuMTE5NCA0Mi4yNDhDNDUuMzAxOCA0Mi4yNzUyIDQ1LjQ4ODMgNDIuMjQzOSA0NS42NTE0IDQyLjE1ODdDNDcuMDU4IDQwLjQ2MDUgNDguMTk4NSAzOC41NjMgNDkuMDM0OCAzNi41Mjk4QzQ5LjA5NTkgMzYuMzEyNyA0OS4wNjc2IDM2LjA4MDQgNDguOTU2MiAzNS44ODM3QzQ4Ljg0NDcgMzUuNjg3MSA0OC42NTkxIDM1LjU0MiA0OC40Mzk4IDM1LjQ4MDJDNDguMjE5MSAzNS40MzIgNDcuOTg4MSAzNS40NjY3IDQ3Ljc5MTkgMzUuNTc3NUM0Ny41OTU2IDM1LjY4ODQgNDcuNDQ4MSAzNS44Njc1IDQ3LjM3ODEgMzYuMDhMNDcuNDI0OCAzNi4wNjg1WiIgZmlsbD0iIzQwNDg1MiIvPgo8cGF0aCBkPSJNOS41MzE2NCAxOS43MzU2QzguMjI0MzggMjIuNTc4MSA3LjU2NTEgMjUuNjY5OSA3LjYwMDQ3IDI4Ljc5MjNDNy42MzU4NCAzMS45MTQ2IDguMzY1IDM0Ljk5MTEgOS43MzYzMyAzNy44MDM5QzExLjEwNzcgNDAuNjE2NyAxMy4wODc2IDQzLjA5NzEgMTUuNTM2MSA0NS4wNjk1QzE3Ljk4NDUgNDcuMDQxOSAyMC44NDE2IDQ4LjQ1ODEgMjMuOTA1IDQ5LjIxNzhDMjcuMTExIDQ5Ljk5MzYgMzAuNDUyOCA1MC4wNDQ5IDMzLjY4MTYgNDkuMzY3N0MzNC43NjY2IDQ5LjE0ODYgMzQuMzExNiA0Ny41MTA3IDMzLjIyNjYgNDcuNzI5OEMzMC40OTEzIDQ4LjI5OTUgMjcuNjY1MSA0OC4yOTEgMjQuOTMzMyA0Ny43MDVDMjIuMjAxNiA0Ny4xMTkxIDE5LjYyNTkgNDUuOTY4OCAxNy4zNzUzIDQ0LjMyOTZDMTUuMTI0NyA0Mi42OTA1IDEzLjI1IDQwLjU5OTUgMTEuODc0MSAzOC4xOTM4QzEwLjQ5ODMgMzUuNzg4MSA5LjY1MjI2IDMzLjEyMiA5LjM5MTY0IDMwLjM3MDRDOS4wOTQ1MyAyNy4wMzA5IDkuNjUyMjEgMjMuNjcxMSAxMS4wMTMzIDIwLjYwMDdDMTEuNDU2NiAxOS42MDg3IDkuOTg2NjQgMTguNzQzNiA5LjUzMTY0IDE5LjczNTZaIiBmaWxsPSIjNDA0ODUyIi8+CjxwYXRoIGQ9Ik0xNS42Njg1IDExLjk0OTdDMTMuOTQ1MyAxMy4zMTYzIDEyLjQ0MjUgMTQuOTM0MyAxMS4yMTE4IDE2Ljc0OEMxMS4wOTczIDE2Ljk0MjMgMTEuMDY1NiAxNy4xNzM1IDExLjEyMzYgMTcuMzkwOUMxMS4xODE1IDE3LjYwODMgMTEuMzI0NSAxNy43OTQxIDExLjUyMSAxNy45MDcyQzExLjcxNzUgMTguMDIwNCAxMS45NTE0IDE4LjA1MTggMTIuMTcxMyAxNy45OTQ1QzEyLjM5MTEgMTcuOTM3MiAxMi41NzkgMTcuNzk1OCAxMi42OTM1IDE3LjYwMTZMMTMuMTQ4NSAxNi45NTU2TDEzLjM3MDEgMTYuNjc4OEMxMy4zNzAxIDE2LjY3ODggMTMuNDc1MSAxNi41Mjg5IDEzLjM3MDEgMTYuNjc4OEwxMy40ODY4IDE2LjUxNzNDMTMuODEzNSAxNi4xMTM2IDE0LjE1MTggMTUuNzIxNSAxNC41MTM1IDE1LjM2MzlDMTUuMjM2NyAxNC41OTI5IDE2LjAxNjYgMTMuODc1OCAxNi44NDY4IDEzLjIxODVDMTYuOTk1MyAxMy4wNjIzIDE3LjA3NzkgMTIuODU2MSAxNy4wNzc5IDEyLjY0MTdDMTcuMDc3OSAxMi40Mjc0IDE2Ljk5NTMgMTIuMjIxMiAxNi44NDY4IDEyLjA2NUMxNi42ODQyIDExLjkyNzcgMTYuNDc3MyAxMS44NTIzIDE2LjI2MzUgMTEuODUyM0MxNi4wNDk2IDExLjg1MjMgMTUuODQyOCAxMS45Mjc3IDE1LjY4MDEgMTIuMDY1TDE1LjY2ODUgMTEuOTQ5N1oiIGZpbGw9IiM0MDQ4NTIiLz4KPHBhdGggZD0iTTUwLjU4NjUgMzAuMTUxMkM1MC44NzczIDI2LjQxNDQgNTAuMTY0OCAyMi42Njc5IDQ4LjUyMTEgMTkuMjkwOEM0Ni44Nzc0IDE1LjkxMzYgNDQuMzYwNyAxMy4wMjU1IDQxLjIyNTcgMTAuOTE4NUMzOC4wOTA2IDguODExNiAzNC40NDg0IDcuNTYwNTkgMzAuNjY3NCA3LjI5MjAyQzI2Ljg4NjMgNy4wMjM0NSAyMy4xMDA2IDcuNzQ2ODcgMTkuNjkzMSA5LjM4OTA4QzE4LjY4OTggOS44NjIgMTkuNTY0OCAxMS4zMjY5IDIwLjU1NjUgMTAuODU0QzIzLjcwMzggOS4zNjc3IDI3LjE5MiA4LjcyODM0IDMwLjY2OTEgOS4wMDAzN0MzNC4xNDYxIDkuMjcyNCAzNy40ODkyIDEwLjQ0NjIgNDAuMzYwOSAxMi40MDM0QzQzLjIzMjcgMTQuMzYwNSA0NS41MzE2IDE3LjAzMTggNDcuMDI1OCAyMC4xNDc4QzQ4LjUyIDIzLjI2MzggNDkuMTU2NiAyNi43MTQzIDQ4Ljg3MTUgMzAuMTUxMkM0OC43ODk4IDMxLjI0NyA1MC41MDQ4IDMxLjIzNTQgNTAuNTg2NSAzMC4xNTEyWiIgZmlsbD0iIzQwNDg1MiIvPgo8cGF0aCBkPSJNOC41MDUgNC43MjkxNUM3LjE2MzMzIDMuNDYwMzUgNy43IDAgNi4yNjUgMEM0LjgzIDAgNS4zNzgzMyAzLjQ2MDM1IDQuMDM2NjcgNC43MjkxNUMyLjAxODMzIDYuNzI0NjEgMCA2LjkyMDcgMCA3LjY4MTk4QzAgOC40NDMyNSAxLjcyNjY3IDguMzYyNTEgMy42ODY2NyAxMC4zMDAzQzQuNzEzMzMgMTEuMzE1MyA1LjI3MzMzIDE1LjQ3OTMgNi4yNjUgMTUuNDc5M0M3LjI1NjY3IDE1LjQ3OTMgNy44MjgzMyAxMS4zMTUzIDguODU1IDEwLjMwMDNDMTAuODE1IDguMzYyNTEgMTIuNTQxNyA4LjQ4OTM5IDEyLjU0MTcgNy42ODE5OEMxMi41NDE3IDYuODc0NTYgMTAuNSA2LjcyNDYxIDguNTA1IDQuNzI5MTVaIiBmaWxsPSIjRjdCNTE5Ii8+CjxwYXRoIGQ9Ik01Mi45NDM0IDQ3Ljg1NjdDNTEuOTI4NCA0Ni44NTMyIDUyLjMzNjggNDQuMjgxIDUxLjI1MTggNDQuMjgxQzUwLjE2NjggNDQuMjgxIDUwLjU3NTEgNDYuODUzMiA0OS41NjAxIDQ3Ljg1NjdDNDguMDMxOCA0OS4zNjc3IDQ2LjUwMzQgNDkuNDk0NiA0Ni41MDM0IDUwLjA5NDRDNDYuNTAzNCA1MC42OTQyIDQ3LjgxMDEgNTAuNjAxOSA0OS4zMDM0IDUyLjA3ODNDNTAuMDczNCA1Mi44NTExIDUwLjQ3MDEgNTYuMDAwMSA1MS4yNTE4IDU2LjAwMDFDNTIuMDMzNCA1Ni4wMDAxIDUyLjQxODQgNTIuODUxMSA1My4yMTE4IDUyLjA3ODNDNTQuNjkzNCA1MC42MDE5IDU2LjAwMDEgNTAuNzUxOSA1Ni4wMDAxIDUwLjA5NDRDNTYuMDAwMSA0OS40MzY5IDU0LjQ3MTggNDkuMzY3NyA1Mi45NDM0IDQ3Ljg1NjdaIiBmaWxsPSIjRjdCNTE5Ii8+CjxwYXRoIGQ9Ik0yOC41NDgzIDE4LjY2MjlWMzguNDY3N0MyOC41NzI5IDM4LjY3NTUgMjguNjczOCAzOC44NjcxIDI4LjgzMTkgMzkuMDA2MkMyOC45OSAzOS4xNDUzIDI5LjE5NDIgMzkuMjIyMiAyOS40MDU4IDM5LjIyMjJDMjkuNjE3NSAzOS4yMjIyIDI5LjgyMTcgMzkuMTQ1MyAyOS45Nzk4IDM5LjAwNjJDMzAuMTM3OSAzOC44NjcxIDMwLjIzODggMzguNjc1NSAzMC4yNjMzIDM4LjQ2NzdWMTguNjYyOUMzMC4yMzg4IDE4LjQ1NTEgMzAuMTM3OSAxOC4yNjM1IDI5Ljk3OTggMTguMTI0NEMyOS44MjE3IDE3Ljk4NTMgMjkuNjE3NSAxNy45MDg0IDI5LjQwNTggMTcuOTA4NEMyOS4xOTQyIDE3LjkwODQgMjguOTkgMTcuOTg1MyAyOC44MzE5IDE4LjEyNDRDMjguNjczOCAxOC4yNjM1IDI4LjU3MjkgMTguNDU1MSAyOC41NDgzIDE4LjY2MjlaIiBmaWxsPSIjNDA0ODUyIi8+CjxwYXRoIGQ9Ik0zOS40MjE4IDI3LjY4MjlIMTkuMzkwMUMxOS4xNzk5IDI3LjcwNzEgMTguOTg2MSAyNy44MDY5IDE4Ljg0NTQgMjcuOTYzMkMxOC43MDQ3IDI4LjExOTUgMTguNjI3IDI4LjMyMTQgMTguNjI3IDI4LjUzMDZDMTguNjI3IDI4LjczOTkgMTguNzA0NyAyOC45NDE4IDE4Ljg0NTQgMjkuMDk4MUMxOC45ODYxIDI5LjI1NDQgMTkuMTc5OSAyOS4zNTQyIDE5LjM5MDEgMjkuMzc4NEgzOS40MjE4QzM5LjYzMiAyOS4zNTQyIDM5LjgyNTggMjkuMjU0NCAzOS45NjY1IDI5LjA5ODFDNDAuMTA3MiAyOC45NDE4IDQwLjE4NDkgMjguNzM5OSA0MC4xODQ5IDI4LjUzMDZDNDAuMTg0OSAyOC4zMjE0IDQwLjEwNzIgMjguMTE5NSAzOS45NjY1IDI3Ljk2MzJDMzkuODI1OCAyNy44MDY5IDM5LjYzMiAyNy43MDcxIDM5LjQyMTggMjcuNjgyOVoiIGZpbGw9IiM0MDQ4NTIiLz4KPC9zdmc+Cg=="
+                                                alt="" style="width: 60px;">
+                                            <h2 style="padding-top: 20px;">1. Sign up
+                                            </h2>
+                                            <p>Create your account. Then download the Tasker app to continue registration.
+                                                .</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <img src="https://www.taskrabbit.com/v3/assets/_/_/_/_/_/_/_/apps/web/app/assets/images/web/icons/become_a_tasker/profile-66b4a664320caa8c94ded811b3ec10dc.svg"
+                                                alt="" style="width: 50px;">
+                                            <h2 style="padding-top: 20px;">2. Build your profile
+
+                                            </h2>
+                                            <p>Select what services you want to offer and where.</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <img src="https://www.taskrabbit.com/v3/assets/_/_/_/_/_/_/_/apps/web/app/assets/images/web/icons/become_a_tasker/eligibility-68ec13c65cd448418fc4e27e0590d779.svg"
+                                                alt="" style="width: 50px;">
+                                            <h2 style="padding-top: 20px;">3. Verify your eligibility to task
+                                            </h2>
+                                            <p>Confirm your identity and submit business verifications, as required..</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- row2 -->
+                                    <div class="row pt-5">
+                                        <div class="col-sm-4">
+                                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzkiIGhlaWdodD0iNTYiIHZpZXdCb3g9IjAgMCA3OSA1NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGQ9Ik00MC44NzA5IDQ0LjI2MDNIMTAuMjczM0M4Ljk4MjAzIDQ0LjMzNDMgNy42ODc1NyA0NC4zMzQzIDYuMzk2MjggNDQuMjYwM0M1LjMxMTYxIDQ0LjExNzMgNC4zMTIwNCA0My41OTY2IDMuNTczMjEgNDIuNzg5N0MyLjgzNDM3IDQxLjk4MjggMi40MDM1NCA0MC45NDEzIDIuMzU2NCAzOS44NDgyQzIuMzU2NCAzOS40ODM4IDIuMzU2NCAzOS4wNzI4IDIuMzU2NCAzOC43NDcyVjcuMzA0MzVDMi4zNjQxNiA0LjU5ODE3IDQuMTc4NjEgMi4zNzI3NSA2Ljk3Nzg0IDIuMzI2MjNDOC4wNDAxNSAyLjMyNjIzIDkuMTEwMjEgMi4zMjYyMyAxMC4xNzI1IDIuMzI2MjNINDYuMzI5OEM1MC4wMTMgMi4zMjYyMyA1My43MDM5IDIuMzI2MjMgNTcuMzc5NCAyLjMyNjIzQzU4LjAyNTkgMi4zMTc3NyA1OC42NjcyIDIuNDQyMzcgNTkuMjYzNSAyLjY5MjNDNTkuODU5OCAyLjk0MjIzIDYwLjM5ODMgMy4zMTIxMyA2MC44NDU1IDMuNzc5MDJDNjEuMjkyOCA0LjI0NTkxIDYxLjYzOTIgNC43OTk4IDYxLjg2MzMgNS40MDYyN0M2Mi4wODc0IDYuMDEyNzQgNjIuMTg0NCA2LjY1ODgyIDYyLjE0ODEgNy4zMDQzNVYxOC4yODQxQzYyLjE0ODEgMTguNTkyNiA2Mi4yNzA3IDE4Ljg4ODUgNjIuNDg4OCAxOS4xMDY2QzYyLjcwNjkgMTkuMzI0NyA2My4wMDI4IDE5LjQ0NzIgNjMuMzExMyAxOS40NDcyQzYzLjYxOTcgMTkuNDQ3MiA2My45MTU2IDE5LjMyNDcgNjQuMTMzNyAxOS4xMDY2QzY0LjM1MTggMTguODg4NSA2NC40NzQ0IDE4LjU5MjYgNjQuNDc0NCAxOC4yODQxVjEwLjYxNTNDNjQuNDc0NCA3LjU2Nzk5IDY0LjgxNTUgNC40MTIwNyA2Mi40NDI4IDIuMDMxNTdDNjAuNzk4OSAwLjM3MjE5NiA1OC43MTMxIDAgNTYuNTAzMiAwSDcuNzUzMjRDNS4yMDIxNSAwIDIuODc1OTMgMC43NzU0MDkgMS4zMDk2IDIuOTMxMDRDLTAuMDAwODQwMzM2IDQuNzc2NTIgMC4wMzc5MzAxIDYuODU0NjEgMC4wMzc5MzAxIDguOTg2OThWMzYuMjUwM0MtMC4wMzcwOTcyIDM3LjcxMzMgLTAuMDExMTg4OSAzOS4xNzk3IDAuMTE1NDcxIDQwLjYzOTJDMC42MTk0ODYgNDQuMzA2OCAzLjgxNDE3IDQ2LjU4NjUgNy4zNzMyOSA0Ni41ODY1SDQwLjg3MDlDNDEuMTc5NCA0Ni41ODY1IDQxLjQ3NTMgNDYuNDY0IDQxLjY5MzQgNDYuMjQ1OUM0MS45MTE1IDQ2LjAyNzcgNDIuMDM0IDQ1LjczMTkgNDIuMDM0IDQ1LjQyMzRDNDIuMDM0IDQ1LjExNSA0MS45MTE1IDQ0LjgxOTEgNDEuNjkzNCA0NC42MDFDNDEuNDc1MyA0NC4zODI5IDQxLjE3OTQgNDQuMjYwMyA0MC44NzA5IDQ0LjI2MDNWNDQuMjYwM1oiIGZpbGw9IiM0MDQ4NTIiLz4KPHBhdGggZD0iTTYyLjQ1OTMgNTQuNDU3QzcxLjAyNDMgNTQuNDU3IDc3Ljk2NzUgNDcuNTEzOCA3Ny45Njc1IDM4Ljk0ODhDNzcuOTY3NSAzMC4zODM5IDcxLjAyNDMgMjMuNDQwNyA2Mi40NTkzIDIzLjQ0MDdDNTMuODk0NCAyMy40NDA3IDQ2Ljk1MTIgMzAuMzgzOSA0Ni45NTEyIDM4Ljk0ODhDNDYuOTUxMiA0Ny41MTM4IDUzLjg5NDQgNTQuNDU3IDYyLjQ1OTMgNTQuNDU3WiIgZmlsbD0iI0Y3QjUxOSIvPgo8cGF0aCBkPSJNNzUuMzc3NSA0NC45MTE2Qzc1LjM3NzUgNDQuOTU4MSA3NS4zNzc1IDQ0Ljk5NjkgNzUuMzIzMiA0NS4wNDM0Qzc1LjM5MyA0NC44NzI4IDc1LjQwODUgNDQuODQxOCA3NS4zMjMyIDQ0Ljk1ODFMNzUuMjA2OSA0NS4yMTRMNzQuOTY2NSA0NS43MjU4Qzc0Ljc5NTkgNDYuMDU5MiA3NC42MTc2IDQ2LjM4NDkgNzQuNDIzNyA0Ni43MTA2Qzc0LjIyOTkgNDcuMDM2MiA3NC4wMjgzIDQ3LjM1NDIgNzMuODExMiA0Ny42NjQzTDczLjQ3NzcgNDguMTIxOEM3My40MDAyIDQ4LjIyIDczLjQxNTcgNDguMTk2OCA3My41MjQzIDQ4LjA1Mkw3My40MzkgNDguMTY4M0w3My4yNjA2IDQ4LjM5MzJDNzMuMDQ4NSA0OC42MTUxIDcyLjkyNjkgNDguOTA4MiA3Mi45MTk0IDQ5LjIxNTFDNzIuOTIyMiA0OS41MjMgNzMuMDQ0NSA0OS44MTc3IDczLjI2MDYgNTAuMDM3MUM3My40ODA3IDUwLjI1MTIgNzMuNzc1NSA1MC4zNzEgNzQuMDgyNSA1MC4zNzFDNzQuMzg5NiA1MC4zNzEgNzQuNjg0NCA1MC4yNTEyIDc0LjkwNDUgNTAuMDM3MUM3Ni4wMTcgNDguNjc4IDc2LjkxODggNDcuMTU5MyA3Ny41Nzk2IDQ1LjUzMTlDNzcuNjIyNCA0NS4zODIgNzcuNjM0MSA0NS4yMjQ5IDc3LjYxNDEgNDUuMDcwMkM3Ny41OTQxIDQ0LjkxNTYgNzcuNTQyOCA0NC43NjY2IDc3LjQ2MzMgNDQuNjMyNUM3Ny4zMDU3IDQ0LjM3OTQgNzcuMDU3NSA0NC4xOTYgNzYuNzY5NCA0NC4xMTk2Qzc2LjQ4MTIgNDQuMDQzMyA3Ni4xNzQ3IDQ0LjA3OTcgNzUuOTEyNSA0NC4yMjE1Qzc1LjY2MyA0NC4zODYzIDc1LjQ3NDkgNDQuNjI4OSA3NS4zNzc1IDQ0LjkxMTZWNDQuOTExNloiIGZpbGw9IiM0MDQ4NTIiLz4KPHBhdGggZD0iTTc4Ljc2NTkgNDAuNTYxN0M3OS4wMTU5IDM3LjA3MTMgNzguMTYwNyAzMy41OTA4IDc2LjMyMTcgMzAuNjEzN0M3NC40ODI2IDI3LjYzNjcgNzEuNzUzIDI1LjMxNDEgNjguNTE5OCAyMy45NzU0QzY1LjI4NjcgMjIuNjM2NyA2MS43MTQyIDIyLjM0OTggNTguMzA4OSAyMy4xNTUzQzU0LjkwMzUgMjMuOTYwOSA1MS44MzgyIDI1LjgxODEgNDkuNTQ3NiAyOC40NjM1QzQ3LjI1NyAzMS4xMDg5IDQ1Ljg1NzMgMzQuNDA4NCA0NS41NDcxIDM3Ljg5MzlDNDUuMjM2OCA0MS4zNzk0IDQ2LjAzMTcgNDQuODc0MiA0Ny44MTkxIDQ3Ljg4MjZDNDkuNjA2NSA1MC44OTEgNTIuMjk1NSA1My4yNjA0IDU1LjUwNSA1NC42NTQ4QzU4LjcxNDUgNTYuMDQ5MSA2Mi4yODE2IDU2LjM5NzcgNjUuNzAwMyA1NS42NTExQzY3LjE2NTggNTUuMzQ4NyA2Ni41NDU1IDUzLjEwNzggNjUuMDg3NyA1My40MDI0QzYyLjEzNTMgNTQuMDIyNSA1OS4wNjI1IDUzLjY5NjUgNTYuMzA1OCA1Mi40NzA3QzUzLjU0OTIgNTEuMjQ0OSA1MS4yNDg5IDQ5LjE4MTYgNDkuNzMxOCA0Ni41NzRDNDguMjE0NiA0My45NjYzIDQ3LjU1NzcgNDAuOTQ2OSA0Ny44NTQ0IDM3Ljk0NDZDNDguMTUxMSAzNC45NDI0IDQ5LjM4NjIgMzIuMTA5OSA1MS4zODQ1IDI5Ljg0OTdDNTMuMzgyNyAyNy41ODk0IDU2LjA0MjMgMjYuMDE2MiA1OC45ODU1IDI1LjM1MzdDNjEuOTI4NyAyNC42OTExIDY1LjAwNTkgMjQuOTcyOCA2Ny43Nzk5IDI2LjE1ODhDNzAuNTUzOSAyNy4zNDQ4IDcyLjg4MzcgMjkuMzc0OCA3NC40MzgyIDMxLjk2MDNDNzUuOTkyOCAzNC41NDU4IDc2LjY5MzEgMzcuNTU1NSA3Ni40Mzk3IDQwLjU2MTdDNzYuMzM4OSA0Mi4wNTgyIDc4LjY2NTEgNDIuMDUwNSA3OC43NjU5IDQwLjU2MTdaIiBmaWxsPSIjNDA0ODUyIi8+CjxwYXRoIGQ9Ik01My41MDMgNDAuODA5OEw1OC45MzA5IDQ3LjAxM0M1OS4wMzg0IDQ3LjEyMTggNTkuMTY2NCA0Ny4yMDgyIDU5LjMwNzQgNDcuMjY3MUM1OS40NDg1IDQ3LjMyNjEgNTkuNTk5OSA0Ny4zNTY0IDU5Ljc1MjggNDcuMzU2NEM1OS45MDU3IDQ3LjM1NjQgNjAuMDU3MSA0Ny4zMjYxIDYwLjE5ODIgNDcuMjY3MUM2MC4zMzkzIDQ3LjIwODIgNjAuNDY3MyA0Ny4xMjE4IDYwLjU3NDggNDcuMDEzTDcwLjA4MTMgMzYuMTU3M0w3MS40MzA1IDM0LjYwNjVDNzIuNDE1MyAzMy40ODk5IDcwLjc3MTQgMzEuODM4MyA2OS43ODY2IDMyLjk2MjZMNjAuMjgwMSA0My44MTg0TDU4LjkzMDkgNDUuMzY5Mkg2MC41NzQ4TDU1LjE0NjkgMzkuMTY1OUM1NC4xNjIxIDM4LjA0MTYgNTIuNTE4MyAzOS42OTMyIDUzLjUwMyA0MC44MDk4WiIgZmlsbD0iIzQwNDg1MiIvPgo8cGF0aCBkPSJNNDMuMjc1NyAyMy4yNDY4SDkuNDA1ODNDOC42OTQ5NCAyMy4yNDY4IDguMTE4NjUgMjMuODIzMSA4LjExODY1IDI0LjUzNFYzMC45NDY2QzguMTE4NjUgMzEuNjU3NSA4LjY5NDk0IDMyLjIzMzggOS40MDU4MyAzMi4yMzM4SDQzLjI3NTdDNDMuOTg2NiAzMi4yMzM4IDQ0LjU2MjkgMzEuNjU3NSA0NC41NjI5IDMwLjk0NjZWMjQuNTM0QzQ0LjU2MjkgMjMuODIzMSA0My45ODY2IDIzLjI0NjggNDMuMjc1NyAyMy4yNDY4WiIgZmlsbD0iI0Y3QjUxOSIvPgo8cGF0aCBkPSJNNjIuNTQ0MyA4LjU5MTU1SDguMTg4MThDNy4zNzg3OSA4LjU5MTU1IDYuNzIyNjYgOS4yNDc2OSA2LjcyMjY2IDEwLjA1NzFWMTQuNTQ2N0M2LjcyMjY2IDE1LjM1NjEgNy4zNzg3OSAxNi4wMTIyIDguMTg4MTggMTYuMDEyMkg2Mi41NDQzQzYzLjM1MzcgMTYuMDEyMiA2NC4wMDk4IDE1LjM1NjEgNjQuMDA5OCAxNC41NDY3VjEwLjA1NzFDNjQuMDA5OCA5LjI0NzY5IDYzLjM1MzcgOC41OTE1NSA2Mi41NDQzIDguNTkxNTVaIiBmaWxsPSIjRjdCNTE5Ii8+CjxwYXRoIGQ9Ik0xOC44MTk0IDMwLjkzMUgxMC40NjA1QzkuOTk1MjYgMzAuOTMxIDkuMDU3MDEgMzEuMTE3MSA4LjgxNjY0IDMwLjU4MjFDOC42OTYzMyAyOS44Njg2IDguNjk2MzMgMjkuMTQgOC44MTY2NCAyOC40MjY1VjI1LjA4NDVDOC44MTY2NCAyNC41NDk0IDguNzA4MDggMjMuOTUyNCA5LjM5MDQ0IDIzLjg0MzhDOS42NDg2NiAyMy44Mjc2IDkuOTA3NjMgMjMuODI3NiAxMC4xNjU4IDIzLjg0MzhINDAuOTE4NUM0MS40NjEzIDIzLjg0MzggNDMuNDE1NCAyMy41MjU5IDQzLjQ3NzQgMjQuMzc4OEM0My41ODU5IDI1Ljg2NzYgNDUuOTE5OSAyNS44NzU0IDQ1LjgwMzYgMjQuMzc4OEM0NS43ODM4IDIzLjYyMjIgNDUuNDcyOCAyMi45MDI1IDQ0LjkzNTQgMjIuMzY5NUM0NC4zOTgxIDIxLjgzNjQgNDMuNjc1OCAyMS41MzEzIDQyLjkxOTEgMjEuNTE3NkM0Mi42MjQ0IDIxLjUxNzYgNDIuMzM3NSAyMS41MTc2IDQyLjA0MjkgMjEuNTE3NkgxMC4xNTAzQzkuODc4OTUgMjEuNTE3NiA5LjYwNzU1IDIxLjUxNzYgOS4zMzYxNiAyMS41MTc2QzguNTc5NDcgMjEuNTMzMyA3Ljg1ODA0IDIxLjg0MDQgNy4zMjIxNCAyMi4zNzQ5QzYuNzg2MjUgMjIuOTA5MyA2LjQ3NzIxIDIzLjYyOTkgNi40NTk0IDI0LjM4NjZDNi4zNzQxIDI2LjMzMjkgNi4zOTczNiAyOC4zMzM0IDYuNDU5NCAzMC4yNzE5QzYuNDU0MjcgMzAuNjU4OSA2LjUyNTQyIDMxLjA0MzEgNi42Njg3OCAzMS40MDI1QzYuODEyMTUgMzEuNzYyIDcuMDI0OTEgMzIuMDg5NyA3LjI5NDkzIDMyLjM2NjlDNy41NjQ5NSAzMi42NDQxIDcuODg2OTMgMzIuODY1NCA4LjI0MjQ5IDMzLjAxODJDOC41OTgwNSAzMy4xNzEgOC45ODAyMiAzMy4yNTIyIDkuMzY3MTggMzMuMjU3M0MxMC4yNDM0IDMzLjI1NzMgMTEuMTM1MSAzMy4yNTczIDEyLjAxMTMgMzMuMjU3M0gxOC44MTk0QzE5LjEyNzkgMzMuMjU3MyAxOS40MjM3IDMzLjEzNDcgMTkuNjQxOSAzMi45MTY2QzE5Ljg2IDMyLjY5ODUgMTkuOTgyNSAzMi40MDI2IDE5Ljk4MjUgMzIuMDk0MkMxOS45ODI1IDMxLjc4NTcgMTkuODYgMzEuNDg5OCAxOS42NDE5IDMxLjI3MTdDMTkuNDIzNyAzMS4wNTM2IDE5LjEyNzkgMzAuOTMxIDE4LjgxOTQgMzAuOTMxVjMwLjkzMVoiIGZpbGw9IiM0MDQ4NTIiLz4KPHBhdGggZD0iTTM0LjQ3NDUgMzAuOTMxMkgyOS45ODQ5QzI5LjY3NyAzMC45MzMyIDI5LjM4MjQgMzEuMDU2NCAyOS4xNjQ3IDMxLjI3NDFDMjguOTQ3IDMxLjQ5MTggMjguODIzOCAzMS43ODY0IDI4LjgyMTggMzIuMDk0M0MyOC44Mjc3IDMyLjQwMDkgMjguOTUyMiAzMi42OTMzIDI5LjE2OSAzMi45MTAxQzI5LjM4NTkgMzMuMTI3IDI5LjY3ODMgMzMuMjUxNCAyOS45ODQ5IDMzLjI1NzRIMzQuNDc0NUMzNC43ODMgMzMuMjU3NCAzNS4wNzg4IDMzLjEzNDggMzUuMjk3IDMyLjkxNjdDMzUuNTE1MSAzMi42OTg2IDM1LjYzNzYgMzIuNDAyNyAzNS42Mzc2IDMyLjA5NDNDMzUuNjM3NiAzMS43ODU4IDM1LjUxNTEgMzEuNDg5OSAzNS4yOTcgMzEuMjcxOEMzNS4wNzg4IDMxLjA1MzcgMzQuNzgzIDMwLjkzMTIgMzQuNDc0NSAzMC45MzEyWiIgZmlsbD0iIzQwNDg1MiIvPgo8cGF0aCBkPSJNNDAuODcwOSA0NC4yNjAzSDEwLjI3MzNDOC45ODIwMyA0NC4zMzQzIDcuNjg3NTcgNDQuMzM0MyA2LjM5NjI4IDQ0LjI2MDNDNS4zMTE2MSA0NC4xMTczIDQuMzEyMDQgNDMuNTk2NiAzLjU3MzIxIDQyLjc4OTdDMi44MzQzNyA0MS45ODI4IDIuNDAzNTQgNDAuOTQxMyAyLjM1NjQgMzkuODQ4MkMyLjM1NjQgMzkuNDgzOCAyLjM1NjQgMzkuMDcyOCAyLjM1NjQgMzguNzQ3MlY3LjMwNDM1QzIuMzY0MTYgNC41OTgxNyA0LjE3ODYxIDIuMzcyNzUgNi45Nzc4NCAyLjMyNjIzQzguMDQwMTUgMi4zMjYyMyA5LjExMDIxIDIuMzI2MjMgMTAuMTcyNSAyLjMyNjIzSDQ2LjMyOThDNTAuMDEzIDIuMzI2MjMgNTMuNzAzOSAyLjMyNjIzIDU3LjM3OTQgMi4zMjYyM0M1OC4wMjU5IDIuMzE3NzcgNTguNjY3MiAyLjQ0MjM3IDU5LjI2MzUgMi42OTIzQzU5Ljg1OTggMi45NDIyMyA2MC4zOTgzIDMuMzEyMTMgNjAuODQ1NSAzLjc3OTAyQzYxLjI5MjggNC4yNDU5MSA2MS42MzkyIDQuNzk5OCA2MS44NjMzIDUuNDA2MjdDNjIuMDg3NCA2LjAxMjc0IDYyLjE4NDQgNi42NTg4MiA2Mi4xNDgxIDcuMzA0MzVWMTguMjg0MUM2Mi4xNDgxIDE4LjU5MjYgNjIuMjcwNyAxOC44ODg1IDYyLjQ4ODggMTkuMTA2NkM2Mi43MDY5IDE5LjMyNDcgNjMuMDAyOCAxOS40NDcyIDYzLjMxMTMgMTkuNDQ3MkM2My42MTk3IDE5LjQ0NzIgNjMuOTE1NiAxOS4zMjQ3IDY0LjEzMzcgMTkuMTA2NkM2NC4zNTE4IDE4Ljg4ODUgNjQuNDc0NCAxOC41OTI2IDY0LjQ3NDQgMTguMjg0MVYxMC42MTUzQzY0LjQ3NDQgNy41Njc5OSA2NC44MTU1IDQuNDEyMDcgNjIuNDQyOCAyLjAzMTU3QzYwLjc5ODkgMC4zNzIxOTYgNTguNzEzMSAwIDU2LjUwMzIgMEg3Ljc1MzI0QzUuMjAyMTUgMCAyLjg3NTkzIDAuNzc1NDA5IDEuMzA5NiAyLjkzMTA0Qy0wLjAwMDg0MDMzNiA0Ljc3NjUyIDAuMDM3OTMwMSA2Ljg1NDYxIDAuMDM3OTMwMSA4Ljk4Njk4VjM2LjI1MDNDLTAuMDM3MDk3MiAzNy43MTMzIC0wLjAxMTE4ODkgMzkuMTc5NyAwLjExNTQ3MSA0MC42MzkyQzAuNjE5NDg2IDQ0LjMwNjggMy44MTQxNyA0Ni41ODY1IDcuMzczMjkgNDYuNTg2NUg0MC44NzA5QzQxLjE3OTQgNDYuNTg2NSA0MS40NzUzIDQ2LjQ2NCA0MS42OTM0IDQ2LjI0NTlDNDEuOTExNSA0Ni4wMjc3IDQyLjAzNCA0NS43MzE5IDQyLjAzNCA0NS40MjM0QzQyLjAzNCA0NS4xMTUgNDEuOTExNSA0NC44MTkxIDQxLjY5MzQgNDQuNjAxQzQxLjQ3NTMgNDQuMzgyOSA0MS4xNzk0IDQ0LjI2MDMgNDAuODcwOSA0NC4yNjAzVjQ0LjI2MDNaIiBmaWxsPSIjNDA0ODUyIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDAiPgo8cmVjdCB3aWR0aD0iNzguODA0OCIgaGVpZ2h0PSI1NiIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K"
+                                                alt="" style="width: 60px;">
+                                            <h2 style="padding-top: 20px;">4. Pay registration fee
+                                            </h2>
+                                            <p>In applicable cities, we charge a GHC 150 registration fee that helps us provide the best service to you.
+                                                .</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <img src="https://www.taskrabbit.com/v3/assets/_/_/_/_/_/_/_/apps/web/app/assets/images/web/icons/become_a_tasker/set_schedule-3cc95ece540a56dd1da9e407fffa0b84.svg"
+                                                alt="" style="width: 50px;">
+                                            <h2 style="padding-top: 20px;">5. Set your schedule and work area
+
+                                            </h2>
+                                            <p>Set your weekly availability and opt in to receive same-day jobs.</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <img src="https://www.taskrabbit.com/v3/assets/_/_/_/_/_/_/_/apps/web/app/assets/images/web/icons/become_a_tasker/getting_jobs-037938907c55e3d9ae963b4a182b3150.svg"
+                                                alt="" style="width: 70px;">
+                                            <h2 style="padding-top: 20px;">6. Start getting jobs
+                                            </h2>
+                                            <p>Grow your business on your own terms.</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-5 py-5 ">
+                                        <div class="row">
+                                            <div class="col-lg-6 Nina pt-5" style="padding-top: 30px; ">
+                                                
+                                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDEiIGhlaWdodD0iMzQiIHZpZXdCb3g9IjAgMCA0MSAzNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuNzc2IDIyLjExMkMwLjc3NiAyOS4xNjggNC45NTIgMzMuMDU2IDkuNzA0IDMzLjA1NkMxNC4wMjQgMzMuMDU2IDE3LjMzNiAyOS42IDE3LjMzNiAyNS40MjRDMTcuMzM2IDIxLjEwNCAxNC40NTYgMTguMDggMTAuNDI0IDE4LjA4QzkuNzA0IDE4LjA4IDguNjk2IDE4LjIyNCA4LjU1MiAxOC4yMjRDOC45ODQgMTMuNjE2IDEzLjE2IDcuODU1OTkgMTcuNzY4IDQuODMyTDEyLjQ0IDAuNTExOTkzQzUuODE2IDUuMjYzOTkgMC43NzYgMTMuMzI4IDAuNzc2IDIyLjExMlpNMjMuODE2IDIyLjExMkMyMy44MTYgMjkuMTY4IDI3Ljk5MiAzMy4wNTYgMzIuNzQ0IDMzLjA1NkMzNy4wNjQgMzMuMDU2IDQwLjUyIDI5LjYgNDAuNTIgMjUuNDI0QzQwLjUyIDIxLjEwNCAzNy40OTYgMTguMDggMzMuNDY0IDE4LjA4QzMyLjc0NCAxOC4wOCAzMS43MzYgMTguMjI0IDMxLjU5MiAxOC4yMjRDMzIuMTY4IDEzLjYxNiAzNi4yIDcuODU1OTkgNDAuODA4IDQuODMyTDM1LjQ4IDAuNTExOTkzQzI4Ljg1NiA1LjI2Mzk5IDIzLjgxNiAxMy4zMjggMjMuODE2IDIyLjExMloiIGZpbGw9IiM1MUFGMzMiLz4KPC9zdmc+Cg==" style="width:50px;" alt="">
+                                                <p  style= "font-size: 20px; font-weight: 100;">I love TsuMi! because i think it is the best place to make money from what you can do better, i am happy because i am making money from what i can do better apart from my real job.</p>
+                                                <small><i><em>Boakye Nina, Accra-Ghana</em></i></small>
+                                            
+                                            </div>
+                                            <!-- WGat us TsuMi SEction -->
+                                             <div class="col-lg-6">
+                                                <img style="width: 100%;  border-radius: 10px;"
+                                                    src="https://i.imgur.com/3yLntOm.jpg"
+                                                    alt="Tsumi Takser">
+                                            </div> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="testimonies">
+        <div class="container-fluid">
+            <div class="row pt-5" style="text-align:center">
+                <div class="col-sm-3">
+                    <img src="https://assets.taskrabbit.com/v3/assets/static/homepage/publications/apartment-therapy-5bf698bae4f43166fada1734642f92fbb61f50f6c98670ae9dfaa2cebf6ad2c0.svg" style="width: 10rem;" class="pt-3" alt="">
+
+                    <h6>
+                        “TaskRabbit, one of the biggest players in the gig economy where people offer their time and services as housecleaners, movers, furniture assemblers...”
+                    </h6>
+                </div>
+                <div class="col-sm-3">
+                    <img src="https://assets.taskrabbit.com/v3/assets/static/homepage/publications/brit-co-5317930631ee67760bfc333941f2433f37284d57171a3d55d909b44b2511c35c.svg" style="width:10rem;" alt="">
+                    <h6>
+                        “TaskRabbit, one of the biggest players in the gig economy where people offer their time and services as housecleaners, movers, furniture assemblers...”
+                    </h6>
+                </div>
+                <div class="col-sm-3">
+                    <img src="" alt="">
+                    <h6>
+                        “TaskRabbit, one of the biggest players in the gig economy where people offer their time and services as housecleaners, movers, furniture assemblers...”
+                    </h6>
+                </div>
+                <div class="col-sm-3">
+                    <img src="" alt="">
+                    <h6>
+                        “TaskRabbit, one of the biggest players in the gig economy where people offer their time and services as housecleaners, movers, furniture assemblers...”
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

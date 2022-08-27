@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import userinformations,Contact_form,Tsu_MI_Details
+from .models import Payment, userinformations,Contact_form,Tsu_MI_Details,Popular_Details,PaymentFees
 
 # Register your models here.
 
@@ -34,3 +34,16 @@ class TsumiDetailsAdmin(admin.ModelAdmin):
 
 admin.site.register(Tsu_MI_Details,TsumiDetailsAdmin)
     
+
+admin.site.register(Popular_Details)
+
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ("amount", "ref", "email","date_created","verified")
+    list_filter  = ("amount", "ref")
+    search_fields = [list_filter]
+    actions = ['Order fulfilled']
+    
+    def order_fulfilled(self, request, queryset):
+        queryset.update(fulfilled=True)
+admin.site.register(Payment, PaymentAdmin)
+admin.site.register(PaymentFees)

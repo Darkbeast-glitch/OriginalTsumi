@@ -1,0 +1,619 @@
+<!-- {% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="{% static 'assets/images/twumii.jpg'%}" type="image/x-icon">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'assets/images/twumii.jpg'%}" type="image/x-icon">
+    <title>Services || TsuMi Errand Services</title>
+</head>
+
+
+
+<style>
+    .card a {
+        text-decoration: none;
+        color: green;
+
+    }
+
+    .card {
+
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    @media screen and (max-width: 940px) {
+
+
+        .card {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 18rem;
+            /* align-items: center;
+            justify-content: center;
+            align-items: center; */
+            margin: 10px;
+            text-decoration: none;
+            text-transform: capitalize;
+
+        }
+
+
+
+
+    }
+
+    .header h3 {
+        font-weight: 300;
+    }
+
+    .banner {
+        /* The image used */
+        background-image:
+            url("https://media.istockphoto.com/photos/shopping-at-construction-store-picture-id1347239473?b=1&k=20&m=1347239473&s=170667a&w=0&h=ijlbGpw9tUJPr-vjhZ0YPduTTvl01RkIAj2AdXJAanE=");
+        background-size: cover;
+        background-position: right center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 500px;
+        color: #fff;
+
+    }
+
+    .banner h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: 200px;
+        font-size: 5rem;
+        text-align: center;
+        justify-self: center;
+        text-transform: capitalize;
+    }
+
+    @media screen and (max-width: 940px) {
+        .banner h1 {
+            font-size: 2rem;
+            padding-top: 10rem;
+        }
+
+        .banner {
+            height: 300px;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Navbar here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home'%}">TsuMi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Orders</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Report an issue</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                <a class="nav-link disabled"></a>
+              </li> -->
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- End of Navbar -->
+
+
+    <!-- header banner -->
+    <div class="banner">
+        <h1>Your To-do-lilst on us</h1>
+
+    </div>
+    <!-- End of header -->
+
+
+    <div class="container pt-5">
+
+        <div class="header"
+            style="align-items: center; justify-content: center;text-align: center; padding-bottom: 5px;">
+            <h3>Hire a trusted Tasker presto.
+            </h3>
+        </div>
+
+        <!-- ROW 1 -->
+        <div class="row">
+            <div class="col-4 col-md-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/its-laundry-day-picture-id1290513514?b=1&k=20&m=1290513514&s=170667a&w=0&h=QIq6SbgUQyVAH8gQMiwiTofhbLnCcuwUUkaLh8GAhCY="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Featured Tasks</a>
+                        <p>Let Taskers help tackle your to-do list.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+                            <!-- 
+                        Delivery Service
+                        Home Repairs
+                        General Cleaning
+                        Furniture Assembly
+                        Help Moving
+                        Heavy Lifting
+                        Spring Cleaning
+                        Personal Assistant
+                        Yard Work Services
+                        Wait in Line
+                        Closet Organization Service
+                        Office Administration
+                        Research -->
+                            <li><a href="#">Delivery Services</a></li>
+                            <li><a href="#">Home Repairs</a></li>
+                            <li><a href="#">General Cleaning</a></li>
+                            <li><a href="#">Furniture Assembly</a></li>
+                            <li><a href="#">Office Administration</a></li>
+                            <li><a href="#"> Yard Work Services</a></li>
+                            <li><a href="#">Wait in Line</a></li>
+                            <li><a href="#"> Help Moving</a></li>
+                            <li><a href="#">Closet Organization Service</a></li>
+                            <li><a href="#"> Heavy Lifting</a></li>
+                            <li><a href="#"> Spring Cleaning</a></li>
+                            <li><a href="#"> Personal Assistant</a></li>
+                            <li><a href="#"> Heavy Lifting</a></li>
+                            <li><a href="#"> Spring Cleaning</a></li>
+                            <li><a href="#"> Personal Assistant</a></li>
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/cleaning-home-table-sanitizing-kitchen-table-surface-with-spray-picture-id1218311009?b=1&k=20&m=1218311009&s=170667a&w=0&h=kDeMCK9cCia7jrUyY3ScLqae1sSwF5r_6nNbR-NrM_g="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Handyman</a>
+                        <p>Hire a TsuMi Tasker to work around the house😊.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+                            <!-- 
+                       
+                        Furniture Assembly
+                       
+                        Ceiling Fan Installation
+                       
+                        Heavy Lifting
+                        Install Air Conditioner
+                        
+                        Plumbing
+                       
+
+                        
+                        
+                       
+                        Electrical Help
+
+                        
+                        Deck Restoration Services
+                        Doorbell Installation
+                        Home Theater Installing-->
+                            <li><a href="#"> Ceiling Fan Installation</a></li>
+                            <li><a href="#">Doorbell Installation</a></li>
+                            <li><a href="#"> Fence Installation & Repair Services</a></li>
+                            <li><a href="#"> Mounting</a></li>
+                            <li><a href="#">Cabinet Installation</a></li>
+                            <li><a href="#"> Carpentry & Construction</a></li>
+                            <li><a href="#">Drywall Repair Service</a></li>
+                            <li><a href="#"> Shelf Mounting</a></li>
+                            <li><a href="#"> Light Installation</a></li>
+                            <li><a href="#">Baby Proofing</a></li>
+                            <li><a href="#"> Painting</a></li>
+                            <li><a href="#"> TV Mounting</a></li>
+                            <li><a href="#"> Smart Home Installation</a></li>
+                            <li><a href="#"> Home Maintenance</a></li>
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/its-moving-day-picture-id860044730?b=1&k=20&m=860044730&s=170667a&w=0&h=CIioAcgb14YpmvFR9XsWhNTWeK8-2GBW7FdQjruNVfc="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Handyman</a>
+                        <p>Hire a TsuMi Tasker to work around the house😊.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+
+                            <li><a href="#"> Ceiling Fan Installation</a></li>
+                            <li><a href="#">Doorbell Installation</a></li>
+                            <li><a href="#"> Fence Installation & Repair Services</a></li>
+                            <li><a href="#"> Mounting</a></li>
+                            <li><a href="#">Cabinet Installation</a></li>
+                            <li><a href="#"> Carpentry & Construction</a></li>
+                            <li><a href="#">Drywall Repair Service</a></li>
+                            <li><a href="#"> Shelf Mounting</a></li>
+                            <li><a href="#"> Light Installation</a></li>
+                            <!-- <li><a href="#">Baby Proofing</a></li> -->
+                            <li><a href="#"> Painting</a></li>
+                            <li><a href="#"> TV Mounting</a></li>
+                            <li><a href="#"> Smart Home Installation</a></li>
+                            <!-- <li><a href="#"> Home Maintenance</a></li> -->
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row pt-5">
+            <div class="col-4 col-md-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/its-laundry-day-picture-id1290513514?b=1&k=20&m=1290513514&s=170667a&w=0&h=QIq6SbgUQyVAH8gQMiwiTofhbLnCcuwUUkaLh8GAhCY="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Featured Tasks</a>
+                        <p>Let Taskers help tackle your to-do list.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+                            <!-- 
+                        Delivery Service
+                        Home Repairs
+                        General Cleaning
+                        Furniture Assembly
+                        Help Moving
+                        Heavy Lifting
+                        Spring Cleaning
+                        Personal Assistant
+                        Yard Work Services
+                        Wait in Line
+                        Closet Organization Service
+                        Office Administration
+                        Research -->
+                            <li><a href="#">Delivery Services</a></li>
+                            <li><a href="#">Home Repairs</a></li>
+                            <li><a href="#">General Cleaning</a></li>
+                            <li><a href="#">Furniture Assembly</a></li>
+                            <li><a href="#">Office Administration</a></li>
+                            <li><a href="#"> Yard Work Services</a></li>
+                            <li><a href="#">Wait in Line</a></li>
+                            <li><a href="#"> Help Moving</a></li>
+                            <li><a href="#">Closet Organization Service</a></li>
+                            <li><a href="#"> Heavy Lifting</a></li>
+                            <li><a href="#"> Spring Cleaning</a></li>
+                            <li><a href="#"> Personal Assistant</a></li>
+                            <li><a href="#"> Heavy Lifting</a></li>
+                            <li><a href="#"> Spring Cleaning</a></li>
+                            <li><a href="#"> Personal Assistant</a></li>
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/cleaning-home-table-sanitizing-kitchen-table-surface-with-spray-picture-id1218311009?b=1&k=20&m=1218311009&s=170667a&w=0&h=kDeMCK9cCia7jrUyY3ScLqae1sSwF5r_6nNbR-NrM_g="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Handyman</a>
+                        <p>Hire a TsuMi Tasker to work around the house😊.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+                            <!-- 
+                       
+                        Furniture Assembly
+                       
+                        Ceiling Fan Installation
+                       
+                        Heavy Lifting
+                        Install Air Conditioner
+                        
+                        Plumbing
+                       
+
+                        
+                        
+                       
+                        Electrical Help
+
+                        
+                        Deck Restoration Services
+                        Doorbell Installation
+                        Home Theater Installing-->
+                            <li><a href="#"> Ceiling Fan Installation</a></li>
+                            <li><a href="#">Doorbell Installation</a></li>
+                            <li><a href="#"> Fence Installation & Repair Services</a></li>
+                            <li><a href="#"> Mounting</a></li>
+                            <li><a href="#">Cabinet Installation</a></li>
+                            <li><a href="#"> Carpentry & Construction</a></li>
+                            <li><a href="#">Drywall Repair Service</a></li>
+                            <li><a href="#"> Shelf Mounting</a></li>
+                            <li><a href="#"> Light Installation</a></li>
+                            <li><a href="#">Baby Proofing</a></li>
+                            <li><a href="#"> Painting</a></li>
+                            <li><a href="#"> TV Mounting</a></li>
+                            <li><a href="#"> Smart Home Installation</a></li>
+                            <li><a href="#"> Home Maintenance</a></li>
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/its-moving-day-picture-id860044730?b=1&k=20&m=860044730&s=170667a&w=0&h=CIioAcgb14YpmvFR9XsWhNTWeK8-2GBW7FdQjruNVfc="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Handyman</a>
+                        <p>Hire a TsuMi Tasker to work around the house😊.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+
+                            <li><a href="#"> Ceiling Fan Installation</a></li>
+                            <li><a href="#">Doorbell Installation</a></li>
+                            <li><a href="#"> Fence Installation & Repair Services</a></li>
+                            <li><a href="#"> Mounting</a></li>
+                            <li><a href="#">Cabinet Installation</a></li>
+                            <li><a href="#"> Carpentry & Construction</a></li>
+                            <li><a href="#">Drywall Repair Service</a></li>
+                            <li><a href="#"> Shelf Mounting</a></li>
+                            <li><a href="#"> Light Installation</a></li>
+                            <!-- <li><a href="#">Baby Proofing</a></li> -->
+                            <li><a href="#"> Painting</a></li>
+                            <li><a href="#"> TV Mounting</a></li>
+                            <li><a href="#"> Smart Home Installation</a></li>
+                            <!-- <li><a href="#"> Home Maintenance</a></li> -->
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- ROW 3 -->
+        <div class="row pt-5">
+            <div class="col-4 col-md-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/its-laundry-day-picture-id1290513514?b=1&k=20&m=1290513514&s=170667a&w=0&h=QIq6SbgUQyVAH8gQMiwiTofhbLnCcuwUUkaLh8GAhCY="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Featured Tasks</a>
+                        <p>Let Taskers help tackle your to-do list.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+                            <!-- 
+                        Delivery Service
+                        Home Repairs
+                        General Cleaning
+                        Furniture Assembly
+                        Help Moving
+                        Heavy Lifting
+                        Spring Cleaning
+                        Personal Assistant
+                        Yard Work Services
+                        Wait in Line
+                        Closet Organization Service
+                        Office Administration
+                        Research -->
+                            <li><a href="#">Delivery Services</a></li>
+                            <li><a href="#">Home Repairs</a></li>
+                            <li><a href="#">General Cleaning</a></li>
+                            <li><a href="#">Furniture Assembly</a></li>
+                            <li><a href="#">Office Administration</a></li>
+                            <li><a href="#"> Yard Work Services</a></li>
+                            <li><a href="#">Wait in Line</a></li>
+                            <li><a href="#"> Help Moving</a></li>
+                            <li><a href="#">Closet Organization Service</a></li>
+                            <li><a href="#"> Heavy Lifting</a></li>
+                            <li><a href="#"> Spring Cleaning</a></li>
+                            <li><a href="#"> Personal Assistant</a></li>
+                            <li><a href="#"> Heavy Lifting</a></li>
+                            <li><a href="#"> Spring Cleaning</a></li>
+                            <li><a href="#"> Personal Assistant</a></li>
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/cleaning-home-table-sanitizing-kitchen-table-surface-with-spray-picture-id1218311009?b=1&k=20&m=1218311009&s=170667a&w=0&h=kDeMCK9cCia7jrUyY3ScLqae1sSwF5r_6nNbR-NrM_g="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Handyman</a>
+                        <p>Hire a TsuMi Tasker to work around the house😊.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+                            <!-- 
+                       
+                        Furniture Assembly
+                       
+                        Ceiling Fan Installation
+                       
+                        Heavy Lifting
+                        Install Air Conditioner
+                        
+                        Plumbing
+                       
+
+                        
+                        
+                       
+                        Electrical Help
+
+                        
+                        Deck Restoration Services
+                        Doorbell Installation
+                        Home Theater Installing-->
+                            <li><a href="#"> Ceiling Fan Installation</a></li>
+                            <li><a href="#">Doorbell Installation</a></li>
+                            <li><a href="#"> Fence Installation & Repair Services</a></li>
+                            <li><a href="#"> Mounting</a></li>
+                            <li><a href="#">Cabinet Installation</a></li>
+                            <li><a href="#"> Carpentry & Construction</a></li>
+                            <li><a href="#">Drywall Repair Service</a></li>
+                            <li><a href="#"> Shelf Mounting</a></li>
+                            <li><a href="#"> Light Installation</a></li>
+                            <li><a href="#">Baby Proofing</a></li>
+                            <li><a href="#"> Painting</a></li>
+                            <li><a href="#"> TV Mounting</a></li>
+                            <li><a href="#"> Smart Home Installation</a></li>
+                            <li><a href="#"> Home Maintenance</a></li>
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://media.istockphoto.com/photos/its-moving-day-picture-id860044730?b=1&k=20&m=860044730&s=170667a&w=0&h=CIioAcgb14YpmvFR9XsWhNTWeK8-2GBW7FdQjruNVfc="
+                        class="card-img-top" alt="TsuMi">
+                    <div class="card-header">
+                        <a href="#"><strong><em>TsuMi </em></strong> Handyman</a>
+                        <p>Hire a TsuMi Tasker to work around the house😊.</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <ul>
+
+                            <li><a href="#"> Ceiling Fan Installation</a></li>
+                            <li><a href="#">Doorbell Installation</a></li>
+                            <li><a href="#"> Fence Installation & Repair Services</a></li>
+                            <li><a href="#"> Mounting</a></li>
+                            <li><a href="#">Cabinet Installation</a></li>
+                            <li><a href="#"> Carpentry & Construction</a></li>
+                            <li><a href="#">Drywall Repair Service</a></li>
+                            <li><a href="#"> Shelf Mounting</a></li>
+                            <li><a href="#"> Light Installation</a></li>
+                            <!-- <li><a href="#">Baby Proofing</a></li> -->
+                            <li><a href="#"> Painting</a></li>
+                            <li><a href="#"> TV Mounting</a></li>
+                            <li><a href="#"> Smart Home Installation</a></li>
+                            <!-- <li><a href="#"> Home Maintenance</a></li> -->
+
+                        </ul>
+
+                        <!-- <a href="#" class="btn btn-primary" style="color: #fff;">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- END OF ROW 3 -->
+        
+        
+        
+        
+    </div>
+    
+    
+
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html> -->

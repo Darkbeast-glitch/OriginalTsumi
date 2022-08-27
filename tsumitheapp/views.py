@@ -1,22 +1,25 @@
 from email import message
-from this import d
-from django.shortcuts import render,redirect
-from tsumitheapp.models import Contact_form, userinformations,Tsu_MI_Details
+from django.shortcuts import get_object_or_404, render,redirect
+from tsumitheapp.models import Contact_form, Payment, userinformations,Tsu_MI_Details,Popular_Details,PaymentFees
 from django.contrib import messages
 import time
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .forms import  NewUserForm,ContactForm
 from django.contrib.auth.forms import AuthenticationForm
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
+from . import forms
+from django.contrib.auth.decorators import login_required
+
 
 
 
 # Create your views here.
 
 def Home_view (request):
+    pop_details = Popular_Details.objects.all()
 
     if request.method == 'POST':
         fullname = request.POST['Fullname']
@@ -30,7 +33,10 @@ def Home_view (request):
         messages.success(request,"Your messages has been sent successfully our representative will reach out to you in a short time 😎")
         time.sleep(5)
 
-    context = {}
+    context = {
+
+        'pop_details':pop_details
+    }
     return render(request,'index.html', context)
 
 def customer_info(request):
@@ -96,19 +102,18 @@ def registrationform(request):
     form = NewUserForm()
     return render(request, 'registrations/signup.html',{'form': form})
 
-
-
+@ login_required(login_url='login')
 def choose(request):
 
 
     return render(request,"TSUMI/manual_call.html")
-
+@ login_required(login_url='login')
 def manual_order(request):
 
 
     return render(request, "TSUMI/manualorder.html")
 
-
+@ login_required(login_url='login')
 def order_manually(request):
     
     if request.method == "POST":
@@ -123,7 +128,7 @@ def order_manually(request):
 
         Details = Tsu_MI_Details(fullname=fullname, city=city, address= location, send_type=ordertype,category_name=category, phone_number=phonenumber, item_list=itemlist)
         Details.save()
-        return redirect('order_received')
+        return redirect('initiate_payment')
             
 
 
@@ -132,6 +137,238 @@ def order_manually(request):
 def order_received(request):
     context = {}
     return render(request, 'TSUMI/order_received.html',context)
+
+
+
+# Profile__page
+@ login_required(login_url='login')
+def Profile_page(request):
+
+    context = {}
+    return render(request, "Account/profile_page.html", context)
+
+# services page
+
+def services(request):
+    context = {}
+    return render(request, 'TSUMI/services.html', context)
+
+
+# view for taskers
+@ login_required(login_url='login')
+def Tasker(request):
+
+    context = {
+        'Prices':[
+            {'Deliveryprice' : 50},
+            {'Cleaning' : 150},
+            {'Decoration' : 20},
+            {'Carwash' : 80},
+            {'Deepclean' : 60},
+            {'Errands' : 550},
+           
+        ]
+    }
+    return render (request, 'TASKER/tasker.html',context)
+
+
+
+# Payments
+@ login_required(login_url='login')
+def initiate_payment(request:HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        details = Tsu_MI_Details.objects.all()
+        payment_form = forms.PaymentForm(request.POST)
+        payment_fees = PaymentFees.objects.all()
+       
+        if payment_form.is_valid:
+            payment = payment_form.save()
+            return render (request,'Payments/make_payment.html', {'payment':payment, 'payment_fees':payment_fees,'details':details, 'paystack_public_key': settings.PAYSTACK_PUBLIC_KEY})
+
+    else:
+        payment_form = forms.PaymentForm()
+        return render (request,'Payments/initiate_payment.html',{'payment_form':payment_form})
+
+
+# Verify Payment
+@ login_required(login_url='login')
+def verify_payment(request:HttpRequest, ref:str) -> HttpResponse:
+    payment = get_object_or_404(Payment, ref=ref)
+    verified = payment.verify_payment()
+
+    if verified:
+        messages.success(request, "Verification Successful")
+    else:
+        messages.error(request, "Verification Failed")
+        
+    return redirect('initiate_payment')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # def contact(request):
