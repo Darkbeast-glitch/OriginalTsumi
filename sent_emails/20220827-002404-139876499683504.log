@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 172.20.10.6:8000
+From: webmaster@localhost
+To: jamesborne@gmail.com
+Date: Sat, 27 Aug 2022 00:24:04 -0000
+Message-ID: <166155984468.15459.4225259593009651317@kwakuthetrader>
+
+
+You're receiving this email because you requested a password reset for your user account at 172.20.10.6:8000.
+
+Please go to the following page and choose a new password:
+
+http://172.20.10.6:8000/accounts/reset/OA/bash44-242fb9adf41a1e7403d2d8f5c60481e5/
+
+Your username, in case you’ve forgotten: Jamesborne
+
+Thanks for using our site!
+
+The 172.20.10.6:8000 team
+
+
+
+-------------------------------------------------------------------------------
