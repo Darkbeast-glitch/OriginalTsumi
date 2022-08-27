@@ -11,6 +11,10 @@ from django.http import HttpRequest, HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from . import forms
+<<<<<<< HEAD
+=======
+from django.contrib.auth.decorators import login_required
+>>>>>>> TsumiUpdates
 
 
 
@@ -101,19 +105,18 @@ def registrationform(request):
     form = NewUserForm()
     return render(request, 'registrations/signup.html',{'form': form})
 
-
-
+@ login_required(login_url='login')
 def choose(request):
 
 
     return render(request,"TSUMI/manual_call.html")
-
+@ login_required(login_url='login')
 def manual_order(request):
 
 
     return render(request, "TSUMI/manualorder.html")
 
-
+@ login_required(login_url='login')
 def order_manually(request):
     
     if request.method == "POST":
@@ -141,7 +144,11 @@ def order_received(request):
 
 
 # Profile__page
+<<<<<<< HEAD
 
+=======
+@ login_required(login_url='login')
+>>>>>>> TsumiUpdates
 def Profile_page(request):
 
     context = {}
@@ -155,7 +162,11 @@ def services(request):
 
 
 # view for taskers
+<<<<<<< HEAD
 
+=======
+@ login_required(login_url='login')
+>>>>>>> TsumiUpdates
 def Tasker(request):
 
     context = {
@@ -174,6 +185,10 @@ def Tasker(request):
 
 
 # Payments
+<<<<<<< HEAD
+=======
+@ login_required(login_url='login')
+>>>>>>> TsumiUpdates
 def initiate_payment(request:HttpRequest) -> HttpResponse:
     if request.method == "POST":
         details = Tsu_MI_Details.objects.all()
@@ -190,6 +205,10 @@ def initiate_payment(request:HttpRequest) -> HttpResponse:
 
 
 # Verify Payment
+<<<<<<< HEAD
+=======
+@ login_required(login_url='login')
+>>>>>>> TsumiUpdates
 def verify_payment(request:HttpRequest, ref:str) -> HttpResponse:
     payment = get_object_or_404(Payment, ref=ref)
     verified = payment.verify_payment()

@@ -13,11 +13,17 @@ Description: This Template is created for web template
 @font-face {
   font-family: 'mouse-500';
   src: url("../fonts/Montserrat-Bold.ttf") format("truetype"); }
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 /* ===================================== Basic CSS ================================== */
 * {
   margin: 0px;
   padding: 0px;
-  list-style: none; }
+  list-style: none; 
+  font-family: 'Poppins', sans-serif;
+
+
+}
 
 img {
   max-width: 100%; }

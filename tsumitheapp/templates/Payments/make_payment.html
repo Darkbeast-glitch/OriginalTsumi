@@ -36,6 +36,7 @@
           <br><br>
           <!-- Payment detials  -->
           {% for fees in  payment_fees%}
+<<<<<<< HEAD
           <div id="paymentdetails">
 
             <input type="hidden" id="paymentfee" value="{{fees.paystack_fee}}}}">{{fees.paystack_fee}}<br>
@@ -44,6 +45,18 @@
             <input type="button" class="btn btn-primary" id="addition" onclick="add()" value="Total" ><br>
             <label for="answer"><small>Total amount to be paid:</small></label><br>
             <input type="number" style="width:3rem; border-radius: 3px; border: 1px rgb(23, 168, 194) solid;" id="answer" readonly>
+=======
+
+          <h5>Payment  Details</h5>
+          <div id="paymentdetails">
+            <small id="Deliveryfee">Delivery Fee : <strong>OD (On Delivery)</strong></small><br>
+            
+            <input type="hidden" id="paymentfee" value="{{fees.paystack_fee}}}}"><small id="Paymentcharge"> Payment Charge: <strong>GHC{{fees.paystack_fee}}</strong></small><br>
+            <input type="hidden" id="elevy" value="{{fees.elevy}}"><small id="Elevy"> Elevy : <strong>GHC {{fees.elevy}}%</strong></small><br><br>
+            <input type="button" class="btn btn-primary" id="addition" onclick="add()" value="Total" ><br>
+            <label for="answer"><small>Total amount to be paid:</small></label><br>
+            <input type="number" style="width:5rem; border-radius: 3px; border: 1px rgb(23, 168, 194) solid;" id="answer" readonly>
+>>>>>>> TsumiUpdates
             {% endfor%}
             <script>
 
@@ -129,12 +142,17 @@
 
 <script>
     function payWithPayStack() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> TsumiUpdates
         let currency = "GHS";
         let plan = "";
         let ref = "{{payment.ref }}"
         let obj = {
             key: "{{paystack_public_key}}",
             email:'{{payment.email}}',
+<<<<<<< HEAD
             amount: '{{payment.amount_value}}',
             ref: ref,
             onClose: function(){
@@ -142,6 +160,15 @@
     },
             callback: function(response){
                 let message = 'Payment complete! Reference: ' + response.reference;
+=======
+            amount: '{{payment.amount_value}}' ,
+            ref: ref,
+            onClose: function(){
+      alert('Payment Window Closed.');
+    },
+            callback: function(response){
+                let message = ' Thank you🙂,Payment complete! Your Reference Code is: ' + response.reference;
+>>>>>>> TsumiUpdates
                 alert(message);
                 
             }
